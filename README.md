@@ -5,5 +5,5 @@ Odoo for Ecuador
 In development documentation and implementation
 
 ## Manual
-### [Ubuntu](/ubuntu/README.md)
+### [Ubuntu](./doc/ubuntu/README.md)
 ### Windows
