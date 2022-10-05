@@ -4,6 +4,6 @@ Odoo for Ecuador
 ## Status
 In development documentation and implementation
 
-## Manual
-### [Ubuntu](./doc/ubuntu/README.md)
+## Manual Installation
+### [Ubuntu](./doc/install/ubuntu/README.md)
 ### Windows
