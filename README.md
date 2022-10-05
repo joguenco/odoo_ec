@@ -1,4 +1,4 @@
-# odoo_ec
+# Odoo Ec
 Odoo for Ecuador
 
 ## Status
