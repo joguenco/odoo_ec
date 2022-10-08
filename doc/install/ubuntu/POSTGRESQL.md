@@ -36,3 +36,10 @@ sudo systemctl restart postgresql
 ```commandline
 psql -d postgres -U odoo15 -W
 ```
+### For access to database from remote host 
+* Edit **postgresql.conf** file in the same directory of **pg_hba.conf** file
+* Enable or add: listen_addresses = 'ip server'
+* In **pg_hba.conf** add the next line:
+```
+host    all             odoo15          remote.host.ip/24.mask.number         trust
+```
