@@ -11,7 +11,7 @@ sudo su - postgres
 psql
 ```
 ```commandline
-CREATE ROLE odoo15 WITH LOGIN CREATEDB PASSWORD 'o';
+CREATE ROLE odoo15 WITH LOGIN NOSUPERUSER CREATEDB NOCREATEROLE INHERIT NOREPLICATION CONNECTION LIMIT -1 PASSWORD 'o';
 ```
 * Show **pg_hba.conf** path
 ```commandline
