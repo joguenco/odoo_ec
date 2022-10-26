@@ -25,7 +25,7 @@ C:\Users\......\AppData\Local\Programs\Python\Python38\Scripts
 ```
 Se debe seleccionar las opciones, indicadas en la siguiente ilustración:
 
-![img.png](images/i_python.png)
+![img.png](images/i_python0.png)
 
 Es opcional la actualización del pip
 ```
