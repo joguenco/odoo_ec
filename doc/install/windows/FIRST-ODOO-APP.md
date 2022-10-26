@@ -1,187 +1,726 @@
-## Manual de Instalación de Oddo 15.0 en Windows 11
+## Mi primera Aplicación con Oddo 15.0
 
-### Requerimientos 
- 
-| Versión  | Software       |
-|----------|----------------|
-| 3.8.10   | Python 64 bits |
-| 16.11.4  | VS Build Tools |
-| 0.12.5-1 | Wkhtmltopdf    |
-| 2.33.0   | Git            |
-| 13.4     | Postgresql     |
-| 15.0     | Odoo           |
+### 1. Comando de Odoo con un archivo .conf 
+El comando de Odoo puede ser ejecutado de la siguiente manera:
+```
+(venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --save --stop 
+``` 
+Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor 
 
-### 1. Instalación de Python
-Descargar la versión de Python 3.8.10 (64 Bits) para Windows   [Información de la página oficial](https://www.python.org)
+Por ejemplo los parámetros: dbname, dbuser y dbpassword pueden ser editados
+```
+ dbname= odoo15
+ dbuser= juan
+ dbpassword= ***
+```
+### 2. Comando de Odoo con un archivo .conf y el puerto http 
+El comando de Odoo puede ser ejecutado con el puerto de la dirección Http:
+```
+(venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --http-port=8081 
+```
+### 3. Gestión de los mensajes Log del Servidor 
+
+Los niveles de información pueden tener los siguientes tipos: **warning/error/critical**
+
+En el archivo ./myfile.conf, se pueden configurar los siguientes parámetros: 
+```
+log_db= False
+log_db_level= warning
+log_hanler=:INFO
+log_level= info   warning/error/critical
+logfile= ./mylog.log   
+```
+### 4. Creación de un nuevo módulo addons
+
+El path de la ubicación **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:
+```
+C:\Projects\odoo\addons
+```
+El directorio o carpeta del nuevo **custom-addons**, debe residir dentro de la carpeta **odoo** 
+```
+C:\Projects\odoo\custom-addons
+```
+Comando para añadir un **addons-path**   
+```
+(venv) C:\Projects\odoo> odoo --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
+```
+Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando  **scaffold**   
+```
+(venv) C:\Projects\odoo> odoo scaffold mi_modulo ./custom-addons
+```
+Comando para añadir una base de datos, sin datos demostrativos (**datos de prueba**)     
+```
+(venv) C:\Projects\odoo> odoo -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
+```
+Para la instalación del Nuevo Módulo, se deberá utilizar el siguiente comando:
+```
+(venv) C:\Projects\odoo> odoo -c odoo.conf (-d nombre_bd) -i library_module
+```
+La expresión encerrada entre parentesis del comando anterior es opcional, unicamente selecciona la base de datos
+
+Para la actualización del Módulo, se deberá utilizar el siguiente comando:
+```
+(venv) C:\Projects\odoo> odoo -c odoo.conf (-d nombre_bd) -u library_module
+```
+La expresión encerrada entre parentesis es opcional, selecciona la base de datos
+
+### 5. Creando una nueva Aplicación
+
+**Agregar un Item al menu principal**
+
+En el directorio **/views** se crea el archivo: library_menu.xml y deberá tener el siguiente contenido:
+```
+<odoo>
+    <!-- Library App Menu -->
+    <menuitem id="menu_library" name="Library" />
+</odoo>
+```
+En el archivo: __manifest__.py, se deberá agregar el siguiente código:
+```
+"data": [
+    "views/library_menu.xml",
+],
+```
+**Agregar Grupos de Seguridad**
+
+En el subdirectorio **/security** se debe crear el archivo: **/security/library_security.xml**
+
+En el subdirectorio **/Services/Library** se debe crear el archivo: **/Services/library/base.module_category_services_library**
+
+En el archivo: **/security/library_security.xml**, se deberá agregar el siguiente contenido:
+```
+<odoo>
+
+  <data>
+  <!-- Library User Group -->
+  <record id="library_group_user" model="res.groups">
+    <field name="name">User</field>
+    <field name="category_id"
+           ref="base.module_category_services_library"/>
+    <field name="implied_ids"
+           eval="[(4, ref('base.group_user'))]"/>
+  </record>
+
+  <!-- Library Manager Group -->
+  <record id="library_group_manager" model="res.groups">
+    <field name="name">Manager</field>
+    <field name="category_id"
+           ref="base.module_category_services_library"/>
+    <field name="implied_ids"
+           eval="[(4, ref('library_group_user'))]"/>
+    <field name="users"
+           eval="[(4, ref('base.user_root')),
+                  (4, ref('base.user_admin'))]"/>
+  </record>
+
+  </data>
+  <data noupdate="1">
+    <record id="book_user_rule" model="ir.rule">
+      <field name="name">Library Book User Access</field>
+      <field name="model_id" ref="model_library_book"/>
+      <field name="domain_force">
+        [('active', '=', True)]
+      </field>
+      <field name="groups" eval="[(4, ref('library_group_user'))]"/>
+    </record>
+  </data>
+
+</odoo>
+```
+El archivo **__manifest.py__**, debería tener las siguientes instrucciones:
+```
+"data": [
+    "security/library_security.xml",
+    "views/library_menu.xml",
+],
+```
+### 6. Agregar Test Automatizados
+
+Se debe agregar en el directorio **/tests** el archivo **tests/__init__.py**, con el siguiente código: 
+```
+from . import test_book
+```
+En el directorio **/tests**, se debe agregar el archivo **tests/test_book.py**, con el siguiente código:
+
+```
+from odoo.tests.common import TransactionCase
+
+class TestBook(TransactionCase):
+
+    def setUp(self, *args, **kwargs):
+        super().setUp(*args, **kwargs)
+        self.Book = self.env["library.book"]
+        self.book1 = self.Book.create({
+            "name": "Odoo Development Essentials",
+            "isbn": "879-1-78439-279-6"})
+
+    def test_book_create(self):
+        "New Books are active by default"
+        self.assertEqual(
+            self.book1.active, True
+        )
+```
+**Arrancando los tests**
+
+Con el siguiente comando se arrancan los test: 
+```
+(venv) C:\Projects\odoo> odoo -c odoo.conf -u library_module --test-enable
+```
+**Probando (Testing) la lógica del negocio**
+
+En el archivo **tests/test_book.py**, agregaremos las siguientes líneas de código, después de **test_book_create()**
+
+```
+    def test_check_isbn(self):
+        "Check valid ISBN"
+        self.assertTrue(self.book1._check_isbn)
+```
+**Probando (Testing) la seguridad de acceso**
+
+Finalmente el código, quedaría de la siguiente manera:
+
+```
+from odoo.tests.common import TransactionCase
+
+class TestBook(TransactionCase):
+
+    def setUp(self, *args, **kwargs):
+        super().setUp(*args, **kwargs)
+        user_admin = self.env.ref("base.user_admin")
+        self.env = self.env(user=user_admin)
+        self.Book = self.env["library.book"]
+        self.book1 = self.Book.create({
+            "name": "Odoo Development Essentials",
+            "isbn": "879-1-78439-279-6"})
+
+    def test_book_create(self):
+        "New Books are active by default"
+        self.assertEqual(
+            self.book1.active, True
+        )
+
+    def test_check_isbn(self):
+        "Check valid ISBN"
+        self.assertTrue(self.book1._check_isbn)
+```
+
+### 7. Implementando la capa del modelo
+
+**Creando un data model**
+
+Crear el archivo **models/__init__.py**, y agregar la siguiente línea de código:
+
+```
+from . import library_book
+```
+Crear el archivo **models/library_book.py**, y agregar las siguientes líneas de código:
+
+```
+from odoo import fields, models
+
+class Book(models.Model):
+    _name = "library.book"
+    _description = "Book"
+
+    name = fields.Char("Title", required=True)
+    isbn = fields.Char("ISBN")
+    active = fields.Boolean("Active?", default=True)
+    date_published = fields.Date()
+    image = fields.Binary("Cover")
+    publisher_id = fields.Many2one("res.partner", string="Publisher")
+    author_ids = fields.Many2many("res.partner", string="Authors")
+```
+Ahora para ejecutar los cambios, se debe efectuar la **actualización** del módulo **library_module**, con el siguiente comando:   
+
+```
+(venv) C:\Projects\odoo> odoo -c odoo.conf -u library_module
+```
+### 8. Configurando la seguridad de acceso
+
+**Seguridad en el Control de Acceso**
+
+Para acceder a las reglas de acceso del modelo, podemos navegar en la aplicación web en el apartado: **Settings|Technical|Security|Access Rights** 
+
+En el directorio **/security**, se debe agregar el archivo **security/ir.model.access.csv**, con el siguiente código:
+```
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_book_user,BookUser,model_library_book,library_group_user,1,1,1,0
+access_book_manager,BookManager,model_library_book,library_group_manager,1,1,1,1
+```
+En el archivo **__manifest__.py**, se debería agregar la siguiente línea de código: **security/ir.model.access.csv**, de manera que el archivo deberá quedar de la siguiente manera:
+```
+    'data': [
+        'security/library_security.xml',
+        'security/ir.model.access.csv',
+        'views/library_menu.xml',
+    ],
+```
+Para la actualización del Módulo, se deberá utilizar el siguiente comando:
+```
+(venv) C:\Projects\odoo> odoo -c odoo.conf -u library_module --test-enable
+```
+**Reglas de acceso a nivel de fila**
+
+En el archivo: **security/library-security.xml**, sección <data> antes de el tag </odoo>, se deben agregar las siguientes líneas de código:
+```
+<odoo>
+  ...
+  <data noupdate="1">
+    <record id="book_user_rule" model="ir.rule">
+      <field name="name">Library Book User Access</field>
+      <field name="model_id" ref="model_library_book"/>
+      <field name="domain_force">
+        [('active', '=', True)]
+      </field>
+      <field name="groups" eval="[(4, 
+        ref('library_group_user'))]"/>
+    </record>
+  </data>
+
+</odoo>
+```
+La regla de registro está dentro de un elemento **<data noupdate="1">**, lo que significa que esos
+registros se crearán en la instalación del módulo, pero no se reescribirán en las actualizaciones del módulo.
+
+Finalmente el archivo: **security/library-security.xml**, quedaría de la siguiente manera: 
+
+```
+<odoo>
+
+  <data>
+  <!-- Library User Group -->
+  <record id="library_group_user" model="res.groups">
+    <field name="name">User</field>
+    <field name="category_id"
+           ref="base.module_category_services_library"/>
+    <field name="implied_ids"
+           eval="[(4, ref('base.group_user'))]"/>
+  </record>
+
+  <!-- Library Manager Group -->
+  <record id="library_group_manager" model="res.groups">
+    <field name="name">Manager</field>
+    <field name="category_id"
+           ref="base.module_category_services_library"/>
+    <field name="implied_ids"
+           eval="[(4, ref('library_group_user'))]"/>
+    <field name="users"
+           eval="[(4, ref('base.user_root')),
+                  (4, ref('base.user_admin'))]"/>
+  </record>
+
+  </data>
+  
+  <data noupdate="1">
+    <record id="book_user_rule" model="ir.rule">
+      <field name="name">Library Book User Access</field>
+      <field name="model_id" ref="model_library_book"/>
+      <field name="domain_force">
+        [('active', '=', True)]
+      </field>
+      <field name="groups" eval="[(4, 
+        ref('library_group_user'))]"/>
+    </record>
+  </data>
+  
+</odoo>
+```
+
+### 9. Implementando la capa de vista de backend
+
+**Agregar elementos de menú**
+
+El archivo **views/library_menu.xml**, deberá contener el siguiente código: 
+```
+<odoo>
+
+  <!-- Action to open the Book list -->
+  <record id="action_library_book" model="ir.actions.act_window">
+    <field name="name">Library Books</field>
+    <field name="res_model">library.book</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  
+  <!-- Menu item to open the Book list -->
+  <menuitem id="menu_library_book"
+    name="Books"
+    parent="menu_library"
+    action="action_library_book"
+  />
+
+</odoo>
+```
+**Creación de una vista de formulario**
+
+Se crea el archivo **views/book_view.xml**, el cuál deberá tener el siguiente código:
+
+```
+<odoo> 
+  <record id="view_form_book" model="ir.ui.view"> 
+    <field name="name">Book Form</field> 
+    <field name="model">library.book</field> 
+    <field name="arch" type="xml"> 
+      <form string="Book">
+        <group>
+          <field name="name" /> 
+          <field name="author_ids" widget="many2many_tags" /> 
+          <field name="publisher_id" /> 
+          <field name="date_published" /> 
+          <field name="isbn" /> 
+          <field name="active" /> 
+          <field name="image" widget="image" /> 
+        </group>
+      </form> 
+    </field> 
+  </record>
+    
+</odoo>
+```
+En el archivo: **__manifest__.py** del root,  se deberá, agregar la línea de código: **views/book_view.xml**:
+
+```
+    'name': "library_module",
+
+    'summary': """
+        Short (1 phrase/line) summary of the module's purpose, used as
+        subtitle on modules listing or apps.openerp.com""",
+
+    'description': """
+        Esta es una descripcion extendida
+        de mi nuevo modulo
+        para aprender odoo
+    """,
+
+    'author': "Jorge Luis",
+    'website': "http://mestizos.dev",
+
+    # Categories can be used to filter modules in modules listing
+    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
+    # for the full list
+    'category': 'Services/Library',
+    'version': '0.1',
+
+    # any module necessary for this one to work correctly
+    'depends': ['base'],
+
+    # always loaded
+    'data': [
+        'security/library_security.xml',
+        'security/ir.model.access.csv',
+        'views/book_view.xml',
+        'views/library_menu.xml',
+        'views/book_list_template.xml',
+    ],
+    # only loaded in demonstration mode
+    'demo': [
+        'demo/demo.xml',
+    ],
+    'application': True
+```
+**Vistas de formulario de documentos del Negocio**
+
+En el archivo **views/book_view.xml**, se agregan los elementos **<header>** y **<sheet>**
+```
+<odoo>  
+  <form>
+    <header>
+    </header>
+    <sheet>
+      <group>
+        <field name="name" /> 
+        <field name="author_ids" widget="many2many_tags" /> 
+        <field name="publisher_id" /> 
+        <field name="date_published" /> 
+            
+        <field name="isbn" /> 
+        <field name="active" /> 
+        <field name="image" widget="image" />
+      </group>
+    </sheet>
+  </form>
+</odoo>
+```
+**Agregar Boton de Acción**
+
+En el archivo **views/book_view.xml**,citado anteriormente, se agregará el siguiente código, en el elemento **<header>** 
+
+```
+<header>
+   <button name="verify_isbn" type="object" string="Check ISBN" />
+</header>
+```
+**Usando Grupos para la organización de Formularios**
+
+En el archivo **views/book_view.xml**,citado anteriormente, se organizan los elementos **<group>**
+```
+<sheet>
+  <group name="group_top">
+    <group name="group_left">
+      <field name="name" /> 
+      <field name="author_ids" widget="many2many_tags" /> 
+      <field name="publisher_id" /> 
+      <field name="date_published" /> 
+    </group>
+    <group name="group_right">
+      <field name="isbn" /> 
+      <field name="active" /> 
+      <field name="image" widget="image" /> 
+    </group>
+  </group>
+</sheet>
+```
+**Agregando Listas y Vistas de busqueda**
+
+El elemento **<tree>** deberá contener los campos que se presentarán como columnas, otra vez se edita el archivo **views/book_view.xml**, agregando el siguiente código antes del elemento **</odoo>**
+```
+  <record id="view_tree_book" model="ir.ui.view">
+    <field name="name">Book List</field>
+    <field name="model">library.book</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="isbn"/>
+        <field name="author_ids" widget="many2many_tags"/>
+        <field name="publisher_id"/>
+          <!--<field name="date_published"/>-->
+      </tree>
+    </field>
+  </record>
+  
+  <record id="view_search_book" model="ir.ui.view">
+    <field name="name">Book Filters</field>
+    <field name="model">library.book</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="publisher_id"/>
+        <filter name="filter_inactive"
+                string="Inactive"
+                domain="[('active','=',False)]"/>
+        <filter name="filter_active"
+                string="Active"
+                domain="[('active','=',True)]"/>
+      </search>
+    </field>
+    </record>
+    ...
+  </odoo>  
+```
+Finalmente el código del archivo **views/book_view.xml**, quedaría de la siguiente manera :
+
+```
+<odoo> 
+  <record id="view_form_book" model="ir.ui.view"> 
+    <field name="name">Book Form</field> 
+    <field name="model">library.book</field> 
+    <field name="arch" type="xml"> 
+  
+      <form string="Book">
+        <header>
+          <button name="verify_isbn" type="object"
+            string="Check ISBN" />
+        </header>
+        <sheet>
+          <group name="group_top">
+            <group name="group_left">
+              <field name="name" /> 
+              <field name="author_ids" widget="many2many_tags" /> 
+              <field name="publisher_id" /> 
+              <field name="date_published" /> 
+            </group>
+            <group name="group_right">
+              <field name="isbn" /> 
+              <field name="active" /> 
+              <field name="image" widget="image" /> 
+            </group>
+        </group>
+        </sheet>
+      </form> 
+    </field> 
+  </record>
+  
+  <record id="view_tree_book" model="ir.ui.view">
+    <field name="name">Book List</field>
+    <field name="model">library.book</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="isbn"/>
+        <field name="author_ids" widget="many2many_tags"/>
+        <field name="publisher_id"/>
+          <!--<field name="date_published"/>-->
+      </tree>
+    </field>
+  </record>
+  
+  <record id="view_search_book" model="ir.ui.view">
+    <field name="name">Book Filters</field>
+    <field name="model">library.book</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="publisher_id"/>
+        <filter name="filter_inactive"
+                string="Inactive"
+                domain="[('active','=',False)]"/>
+        <filter name="filter_active"
+                string="Active"
+                domain="[('active','=',True)]"/>
+      </search>
+    </field>
+  </record>
+  
+</odoo>
+
+```
+### 10. Implementación de la capa lógica del negocio  
+
+**Agregar la lógica en la capa del negocio**
+
+Ahora el archivo **models/library_book.py**, quedaría de la siguiente manera, agregando el **Validador de errores:**
+
+```
+from odoo import fields, models
+from odoo.exceptions import ValidationError
+
+class Book(models.Model):
+    """
+    Describes a Book catalogue.
+    """
+    _name = "library.book"
+    _description = "Book"
+
+    name = fields.Char("Title", required=True)
+    isbn = fields.Char("ISBN")
+    active = fields.Boolean("Active?", default=True)
+    date_published = fields.Date()
+    image = fields.Binary("Cover")
+    publisher_id = fields.Many2one("res.partner", string="Publisher")
+    author_ids = fields.Many2many("res.partner", string="Authors")
+
+    def _check_isbn(self):
+        self.ensure_one()
+        digits = [int(x) for x in self.isbn if x.isdigit()]
+        if len(digits) == 13:
+            ponderations = [1, 3] * 6
+            terms = [a * b for a, b in zip(digits[:12], ponderations)]
+            remain = sum(terms) % 10
+            check = 10 - remain if remain != 0 else 0
+            return digits[-1] == check
+
+    def button_check_isbn(self):
+        for book in self:
+            if not book.isbn:
+                raise ValidationError("Please provide an ISBN for %s" % book.name)
+            if book.isbn and not book._check_isbn():
+                raise ValidationError("%s ISBN is invalid" % book.isbn)
+        return True
+```
+
+### 11. Implementación de la Interfaz de Usuario del WebSite
+
+**Agregar el Controlador EndPoint**
+
+Se deberá agregar en el archivo:**library_app/__init__.py** las siguientes líneas de código:
+
+```
+from . import models
+from . import controllers
+```
+En el archivo : **library_app/controllers/__init__.py**, se deberá agregar la siguiente línea de código:
+```
+from . import main
+```
+En el archivo : **library_app/controllers/main.py**, se deberá agregar el siguiente código:
+
+```
+from odoo import http
+
+class Books(http.Controller):
+
+    @http.route("/library/books")
+    def list(self, **kwargs):
+        Book = http.request.env["library.book"]
+        books = Book.search([])
+        return http.request.render(
+            "library_app.book_list_template",
+            {"books": books}
+        )
+```
+**Agregando un QWeb Template**
+
+Se deberá crear el archivo: **views/book_list_template.xml**, y se deberán agregar las siguientes líneas de código:
+
+```
+<odoo>
+
+<template id="book_list_template" name="Book List">
+  <div id="wrap" class="container">
+    <h1>Books</h1>
+      <t t-foreach="books" t-as="book">
+        <div class="row">
+          <span t-field="book.name" />,
+          <span t-field="book.date_published" />,
+          <span t-field="book.publisher_id" />
+        </div>
+      </t>
+  </div>
+</template>
+
+</odoo>
+```
+En el archivo **/__manifest__.py**, se deberá agregar  la línea de código: **views/book_list_template.xml**, en el apartado **data[]**, quedando de la siguiente manera:
+
+```
+{
+    "name": "Library Management",
+    "summary": "Manage library catalog and book lending.",
+    "author": "Daniel Reis",
+    "license": "AGPL-3",
+    "website": "https://github.com/PacktPublishing"
+               "/Odoo-15-Development-Essentials",
+    "version": "15.0.1.0.0",
+    "category": "Services/Library",
+    "depends": ["base"],
+    "data": [
+        "security/library_security.xml",
+        "security/ir.model.access.csv",
+        "views/book_view.xml",
+        "views/library_menu.xml",
+        "views/book_list_template.xml",
+        ],
+    "application": True,
+}
+
+```
+Después de la declaración del archivo **"views/book_list_template.xml"**, en el **__manifest__.py** y realizado la actualización del módulo. 
+La página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deverían de listar los libros disponibles  
+
+**Seguridad de Acceso**
+
+```
+Access security
+
+Internal system models are listed here:
+ • res.groups: groups—relevant fields: name, implied_ids, users
+ • res.users: users—relevant fields: name, groups_id
+ • ir.model.access: Access Control—relevant fields: name, model_id, group_
+   id, perm_read, perm_write, perm_create, perm_unlink
+ • ir.access.rule: Record Rules—relevant fields: name, model_id, groups,
+   domain_force
+
+XML IDs for the most relevant security groups are listed here:
+ • base.group_user: internal user—any backend user
+ • base.group_system: Settings—the Administrator belongs to this group
+ • base.group_no_one: technical feature, usually used to make features not
+   visible to users
+ • base.group_public: Public, used to make features accessible to web
+   anonymous users
+XML IDs for the default users provided by Odoo are listed here:
+ • base.user_root: The root system superuser, also known as OdooBot.
+ • base.user_admin: The default user, by default named Administrator.
+ • base.default_user: The template used for new backend users. It is a template
+   and is inactive, but can be duplicated to create new users.
+ • base.default_public user: The template used to create new portal users.
+```
 
 
-Instalar con las opciones recomendadas, incluyendo el path de Python:
-La ruta del path se encontrara en las siguientes rutas:
-```
-C:\Users\......\AppData\Local\Programs\Python\Python38
-```
-```
-C:\Users\......\AppData\Local\Programs\Python\Python38\Scripts
-```
-Se debe seleccionar las opciones, indicadas en la siguiente ilustración:
 
-
-
-![img.png](images/i_python.png)
-
-Es opcional la actualización del pip
-```
-python -m pip install --upgrade pip 
-```
-
-### 2. Instalación de VS Build Tools
-
-Descargar la versión de VS Build Tools 3.8.10 (64 Bits) para Windows 
-
-
-[Información de la página oficial](https://visualstudio.microsoft.com/es/downloads/)
-
-
-
-![img.png](images/v_VsBuildTools.png)
-
-Una vez descargada la versión VS Build Tools 3.8.10 (64 Bits) para Windows, se debe seleccionar las opciones, mostradas en la siguiente ilustración: 
-
-
-![img.png](images/i_vsbuildtools.png)
-
-### 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)    [Información de la página oficial](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
-Descargar las herramientas de línea de comandos de código abierto (LGPLv3) para convertir HTML en PDF y varios formatos de imagen utilizando el motor de renderizado Qt WebKit. La versión a descargar es la siguiente:
-```
-wkhtmltox-0.12.5-1.msvc2015-win64.exe
-```
-
-### 4. Instalación de Git   [Información de la página oficial](https://git-scm.com/downloads)
-Descargar la versión 2.33.0 (64 Bits) para Windows. En la instalación se deberá seleccionar las configuraciones señalados en la siguiente ilustración:
-
-
-### 5. Instalación de PostgreSQL 13.4 (64 Bits) [Información de la página oficial](https://www.postgresql.org)
-Descargar la versión 13.4 (64 Bits) de PostgreSQL para Windows. En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
-
-
-A continuación se deberá crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos ***localhost***
-
-![img.png](images/i_postgresql2.png)
-
-En el Tab ***Connection***, se deberá ingresar un Password
-
-![img.png](images/i_postgresql3.png)
-
-A continuación se deberá crear un Rol para gestionar las Bases de Datos
-
-![img.png](images/i_postgresql4.png)
-
-![img.png](images/i_postgresql5.png)
-
-![img.png](images/i_postgresql6.png)
-
-![img.png](images/i_postgresql7.png)
-
-### 6. Clonación del Repositorio de Odoo 15.0  [Información de la página oficial](https://github.com/odoo/odoo)
-
-Se deberá crear un directorio (carpeta), en la ubicación que el usuario a bien tuviere hacerlo, para clonar el repositorio de Odoo
-
-
-Una vez seleccionada la versión 15.0 de Oddo, procedemos a seleccionar el comando de clonación
-
-![img.png](images/i_odoo2.png)
-
-Ejecutaremos el siguiente comando :
-```
-$ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
-```
-![img.png](images/i_odoo3.png)
-
-La sección: $ ***git clone***, es propia del comando de clonación de Odoo  
-```
-$ git clone 
-```
-La sección: ***https://github.com/odoo/odoo.git***, corresponde al comando de clonación de Odoo  
-```
-https://github.com/odoo/odoo.git
-```
-La sección: ***--depth=1 -b 15.0***, corresponde a la última versión de Odoo 15.0
-```
---depth=1 -b 15.0
-```
-Una vez clonado el repositorio de Odoo 15.0, se deberá ingresar en la carpeta creada, llamada odoo y se ejecutará el siguiente comando:
-```
-C:\odoo\odoo>pip install setuptools wheel
-```
-
-A continuación, en el directorio de clonación se deberá de editar el archivo : ***requeriments.txt***, de la siguiente manera:
-
-```
-python-stdnum==1.16
-```
-```
-libsass==0.21.0
-```
-```
-passlib==1.7.2
-```
-```
-cryptography==3.4.8
-```
-
-### 7. Instalación de ***venv*** Python (Entorno Virtual de Python) 
-
-***Únicamente en el caso***, que no se ejecutacen los comandos de Python en las carpetas de Windows, se deberán utilizar los siguientes comandos: 
-### Paso 1:
-```
-C:\Users\admin\Projects\odoo> Get-ExecutionPolicy
-```
-### Paso 2:
-```
-C:\Users\admin\Projects\odoo> Get-ExecutionPolicy -List
-```
-### Paso 3:
-Se deberá abrir otra terminal con permisos de Administrador y ejecutar el siguiente comando:
-```
-C:\Users\admin>Set-ExecutionPolicy  -ExecutionPolicy AllSigned
-```
-Una vez superados los pasos anteriores se deberá ejecutar el siguiente comando en la ruta (Ejemplo):
-```
-C:\Users\admin>pip install virtualenv
-```
-Para crear los Scripts del proyecto se deberá ejecutar el siguiente comando en la ruta (Ejemplo): 
-```
-C:\Users\admin\Projects\odoo>python -m venv ./venv
-```
-Una vez ejecutado el comando anterior se deberían crear los siguientes directorios 
-```
-C:\Users\admin\Projects\odoo\venv\Scripts
-```
-Para habilitar el ***entorno virtual*** de Python, se deberá ejecutar el siguiente comando en un ***terminal con privilegios de Administrador***, en  la ruta (Ejemplo):
-```
-C:\Users\admin\Projects\odoo> .\venv\Scripts\activate
-```
-Se deberá seleccionar la opción [E] Ejecutar para siempre:, y si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, tendrá el siguiente aspecto:
-```
-(venv)PS C:\Users\admin\Projects\odoo>
-```
-Para la instalación de todos los requerimientos de la instancia de odoo en la computadora local, se ejecutará el siguiente comando:
-
-![img.png](images/i_odoo5.png)
-
-### 8. Ejecución de Odoo 15.0
-
-Se abrirá un terminal y se ejecutará el siguiente comando:
-
-![img.png](images/e_odoo1.png)
-```
-El parametro: -d odoo15 es la conexión del servidor creada en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
-```
-```
-El parametro: -r graham es el nombre del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
-```
-```
-El parametro: -w mypassword es el password del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
-```
-Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y escribir la siguiente URL:
-```
