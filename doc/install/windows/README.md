@@ -27,6 +27,7 @@ Se debe seleccionar las opciones, indicadas en la siguiente ilustración:
 
 ![img.png](images/i_python0.png)
 
+
 Es opcional la actualización del pip
 ```
 python -m pip install --upgrade pip 
