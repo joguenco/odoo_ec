@@ -12,7 +12,10 @@
 | 15.0     | Odoo           |
 
 ### 1. Instalación de Python
-Descargar la versión de Python 3.8.10 (64 Bits) para Windows   [Información de la página oficial](https://www.python.org)
+
+[Información de la página oficial](https://www.python.org)
+
+Descargar la versión de Python 3.8.10 (64 Bits) para Windows   
 
 
 Instalar con las opciones recomendadas, incluyendo el path de Python:
@@ -34,10 +37,9 @@ python -m pip install --upgrade pip
 
 ### 2. Instalación de VS Build Tools
 
-Descargar la versión de VS Build Tools 3.8.10 (64 Bits) para Windows 
-
-
 [Información de la página oficial](https://visualstudio.microsoft.com/es/downloads/)
+
+Descargar la versión de VS Build Tools 3.8.10 (64 Bits) para Windows 
 
 ![img.png](images/v_VsBuildTools.png)
 
@@ -87,7 +89,9 @@ A continuación se deberá crear un Rol para gestionar las Bases de Datos
 
 ![img.png](images/i_postgresql7.png)
 
-### 6. Clonación del Repositorio de Odoo 15.0  [Información de la página oficial](https://github.com/odoo/odoo)
+### 6. Clonación del Repositorio de Odoo 15.0  
+
+[Información de la página oficial](https://github.com/odoo/odoo)
 
 Se deberá crear un directorio (carpeta), en la ubicación que el usuario a bien tuviere hacerlo, para clonar el repositorio de Odoo
 
@@ -137,6 +141,7 @@ cryptography==3.4.8
 ### 7. Instalación de ***venv*** Python (Entorno Virtual de Python) 
 
 ***Únicamente en el caso***, que no se ejecutacen los comandos de Python en las carpetas de Windows, se deberán utilizar los siguientes comandos: 
+
 ### Paso 1:
 ```
 C:\Users\admin\Projects\odoo> Get-ExecutionPolicy
