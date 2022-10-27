@@ -45,7 +45,7 @@ Descargar la versión de VS Build Tools 3.8.10 (64 Bits) para Windows
 
 Una vez descargada la versión VS Build Tools 3.8.10 (64 Bits) para Windows, se debe seleccionar las opciones, mostradas en la siguiente ilustración: 
 
-![img.png](images/i_vsbuildtools1.png)
+![img.png](images/i_vsbuildtools2.png)
 
 ### 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)   
 
