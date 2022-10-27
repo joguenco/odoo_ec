@@ -43,7 +43,7 @@ Descargar la versión de VS Build Tools 3.8.10 (64 Bits) para Windows
 
 Una vez descargada la versión VS Build Tools 3.8.10 (64 Bits) para Windows, se debe seleccionar las opciones, mostradas en la siguiente ilustración: 
 
-![img.png](images/i_vsbuildtools.png)
+![img.png](images/i_vsbuildtools1.png)
 
 ### 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)    [Información de la página oficial](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
 Descargar las herramientas de línea de comandos de código abierto (LGPLv3) para convertir HTML en PDF y varios formatos de imagen utilizando el motor de renderizado Qt WebKit. La versión a descargar es la siguiente:
