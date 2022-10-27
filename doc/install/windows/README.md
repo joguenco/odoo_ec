@@ -4,7 +4,7 @@
  
 | Versión  | Software       |
 |----------|----------------|
-| 3.8.10   | Python 64 bits |
+| 3.8.10   | Python         |
 | 16.11.4  | VS Build Tools |
 | 0.12.5-1 | Wkhtmltopdf    |
 | 2.33.0   | Git            |
@@ -13,10 +13,7 @@
 
 ### 1. Instalación de Python
 
-[Información de la página oficial](https://www.python.org)
-
 Descargar la versión de Python 3.8.10 (64 Bits) para Windows   
-
 
 Instalar con las opciones recomendadas, incluyendo el path de Python:
 La ruta del path se encontrara en las siguientes rutas:
@@ -59,14 +56,10 @@ wkhtmltox-0.12.5-1.msvc2015-win64.exe
 
 ### 4. Instalación de Git  
 
-[Información de la página oficial](https://git-scm.com/downloads)
-
 Descargar la versión 2.33.0 (64 Bits) para Windows. En la instalación se deberá seleccionar las configuraciones señalados en la siguiente ilustración:
 
 
 ### 5. Instalación de PostgreSQL 13.4 (64 Bits)
-
-[Información de la página oficial](https://www.postgresql.org)
 
 Descargar la versión 13.4 (64 Bits) de PostgreSQL para Windows. En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
 
@@ -81,7 +74,7 @@ En el Tab ***Connection***, se deberá ingresar un Password
 
 A continuación se deberá crear un Rol para gestionar las Bases de Datos
 
-![img.png](images/i_postgresql4.png)
+![img.png](images/i_postgresql_4.png)
 
 ![img.png](images/i_postgresql15.png)
 
@@ -194,4 +187,6 @@ El parametro: -r graham es el nombre del Rol, asignado en la Sección 4. Instala
 El parametro: -w mypassword es el password del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
 ```
 Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y escribir la siguiente URL:
+```
+http://localhost:8069
 ```
