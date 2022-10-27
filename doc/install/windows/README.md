@@ -15,7 +15,7 @@
 Descargar la versión de Python 3.8.10 (64 Bits) para Windows   
 
 Instalar con las opciones recomendadas, incluyendo el path de Python:
-La ruta del path se encontrara en las siguientes rutas:
+La ruta del path se debería encontrar en las siguientes rutas:
 ```
 C:\Users\......\AppData\Local\Programs\Python\Python38
 ```
@@ -47,7 +47,6 @@ Una vez descargada la versión VS Build Tools 3.8.10 (64 Bits) para Windows, se 
 
 [Información de la página oficial](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
 
-
 Descargar las herramientas de línea de comandos de código abierto (LGPLv3) para convertir HTML en PDF y varios formatos de imagen utilizando el motor de renderizado Qt WebKit. La versión a descargar es la siguiente:
 ```
 wkhtmltox-0.12.5-1.msvc2015-win64.exe
@@ -55,13 +54,12 @@ wkhtmltox-0.12.5-1.msvc2015-win64.exe
 
 ### 4. Instalación de Git  
 
-Descargar la versión 2.33.0 (64 Bits) para Windows. En la instalación se deberá seleccionar las configuraciones señalados en la siguiente ilustración:
+Descargar e instalar de preferencia la versión 2.33.0 (64 Bits) para Windows
 
 
 ### 5. Instalación de PostgreSQL 13.4 (64 Bits)
 
-Descargar la versión 13.4 (64 Bits) de PostgreSQL para Windows. En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
-
+Descargar la versión **PostgreSQL 13.4** para Windows. En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
 
 A continuación se deberá crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos ***localhost***
 
@@ -85,17 +83,14 @@ A continuación se deberá crear un Rol para gestionar las Bases de Datos [(Crea
 
 Se deberá crear un directorio (carpeta), en la ubicación que el usuario a bien tuviere hacerlo, para clonar el repositorio de Odoo
 
-
 Una vez seleccionada la versión 15.0 de Oddo, procedemos a seleccionar el comando de clonación
 
 ![img.png](images/i_odoo_2.png)
-
 
 Ejecutaremos el siguiente comando :
 ```
 $ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
-
 La sección: $ ***git clone***, es propia del comando de clonación de Odoo  
 ```
 $ git clone 
@@ -141,6 +136,7 @@ C:\Users\admin\Projects\odoo> Get-ExecutionPolicy
 C:\Users\admin\Projects\odoo> Get-ExecutionPolicy -List
 ```
 ### Paso 3:
+
 Se deberá abrir otra terminal con permisos de Administrador y ejecutar el siguiente comando:
 ```
 C:\Users\admin>Set-ExecutionPolicy  -ExecutionPolicy AllSigned
@@ -161,7 +157,7 @@ Para habilitar el ***entorno virtual*** de Python, se deberá ejecutar el siguie
 ```
 C:\Users\admin\Projects\odoo> .\venv\Scripts\activate
 ```
-Se deberá seleccionar la opción [E] Ejecutar para siempre:, y si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, tendrá el siguiente aspecto:
+Se deberá seleccionar la opción [E] Ejecutar para siempre, y si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, tendrá el siguiente aspecto:
 ```
 (venv)PS C:\Users\admin\Projects\odoo>
 ```
@@ -172,7 +168,6 @@ Para la instalación de todos los requerimientos de la instancia de odoo en la c
 (venv)PS C:\Users\admin\Projects\odoo> pip install -r requirements.txt
 
 ```
-
 
 ### 8. Ejecución de Odoo 15.0
 
