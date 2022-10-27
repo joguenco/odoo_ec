@@ -170,13 +170,22 @@ Se deberá seleccionar la opción [E] Ejecutar para siempre:, y si todos los pas
 ```
 Para la instalación de todos los requerimientos de la instancia de odoo en la computadora local, se ejecutará el siguiente comando:
 
-![img.png](images/i_odoo5.png)
+```
+
+(venv)PS C:\Users\admin\Projects\odoo> pip install -r requirements.txt
+
+```
+
 
 ### 8. Ejecución de Odoo 15.0
 
 Se abrirá un terminal y se ejecutará el siguiente comando:
 
-![img.png](images/e_odoo1.png)
+```
+
+(venv)PS C:\Users\admin\Projects\odoo> python odoo-bin -d odoo15 -r graham -w mypassword
+
+```
 ```
 El parametro: -d odoo15 es la conexión del servidor creada en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
 ```
