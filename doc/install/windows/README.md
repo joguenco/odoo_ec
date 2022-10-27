@@ -91,13 +91,13 @@ Se deberá crear un directorio (carpeta), en la ubicación que el usuario a bien
 
 Una vez seleccionada la versión 15.0 de Oddo, procedemos a seleccionar el comando de clonación
 
-![img.png](images/i_odoo2.png)
+![img.png](images/i_odoo_2.png)
+
 
 Ejecutaremos el siguiente comando :
 ```
 $ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
-![img.png](images/i_odoo3.png)
 
 La sección: $ ***git clone***, es propia del comando de clonación de Odoo  
 ```
