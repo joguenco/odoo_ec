@@ -74,7 +74,7 @@ En el Tab ***Connection***, se deberá ingresar un Password
 
 A continuación se deberá crear un Rol para gestionar las Bases de Datos
 
-![img.png](images/i_postgresql_4.png)
+![img.png](images/i_postgresql__4.png)
 
 ![img_1.png](images/i_postgresql_5.png)
 
