@@ -77,7 +77,7 @@ A continuación se deberá crear una nueva conexión con el servidor de PostgreS
 
 En el Tab ***Connection***, se deberá ingresar un Password
 
-![img.png](images/i_postgresql3.png)
+![img.png](images/i_postgresql_3.png)
 
 A continuación se deberá crear un Rol para gestionar las Bases de Datos
 
