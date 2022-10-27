@@ -11,6 +11,15 @@
 | 13.4     | Postgresql     |
 | 15.0     | Odoo           |
 
+
+ - Python 3.8.10        
+ - VS Build Tools 16.11.4 
+ - Wkhtmltopdf 0.12.5-1   
+ - Git 2.33.0            
+ - Postgresql 13.4     
+ - Odoo 15.0           
+
+
 ### 1. Instalación de Python
 
 Descargar la versión de Python 3.8.10 (64 Bits) para Windows   
