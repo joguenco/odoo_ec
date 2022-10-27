@@ -2,7 +2,6 @@
 
 ### Requerimientos 
 
-|----------|----------------|
 | 3.8.10   | Python 64 bits |
 | 16.11.4  | VS Build Tools |
 | 0.12.5-1 | Wkhtmltopdf    |
