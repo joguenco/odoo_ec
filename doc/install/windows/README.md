@@ -194,5 +194,7 @@ El parametro: -w mypassword es el password del Rol, asignado en la Sección 4. I
 ```
 Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y escribir la siguiente URL:
 ```
+
 http://localhost:8069
+
 ```
