@@ -73,7 +73,7 @@ Descargar la versión 13.4 (64 Bits) de PostgreSQL para Windows. En la instalaci
 
 A continuación se deberá crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos ***localhost***
 
-![img.png](images/i_postgresql2.png)
+![img.png](images/i_postgresql_2.png)
 
 En el Tab ***Connection***, se deberá ingresar un Password
 
