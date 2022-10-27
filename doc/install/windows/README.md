@@ -81,7 +81,7 @@ A continuación se deberá crear un Rol para gestionar las Bases de Datos
 
 ![img.png](images/i_postgresql4.png)
 
-![img.png](images/i_postgresql5.png)
+![img.png](images/i_postgresql15.png)
 
 ![img.png](images/i_postgresql6.png)
 
