@@ -76,11 +76,11 @@ A continuación se deberá crear un Rol para gestionar las Bases de Datos
 
 ![img.png](images/i_postgresql_4.png)
 
-![img.png](images/i_postgresql15.png)
+![img_1.png](images/i_postgresql_5.png)
 
-![img.png](images/i_postgresql6.png)
+![img.png](images/i_postgresql_6.png)
 
-![img.png](images/i_postgresql7.png)
+![img.png](images/i_postgresql_7.png)
 
 ### 6. Clonación del Repositorio de Odoo 15.0  
 
