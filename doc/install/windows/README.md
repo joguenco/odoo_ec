@@ -28,7 +28,7 @@ La actualización del pip es opcional
 python -m pip install --upgrade pip 
 ```
 
-### 2. Instalación de VS Build Tools
+### [2. Instalación de VS Build Tools](https://visualstudio.microsoft.com/es/downloads/)
 
 [Información de la página oficial](https://visualstudio.microsoft.com/es/downloads/)
 
