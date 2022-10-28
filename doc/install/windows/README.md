@@ -32,13 +32,11 @@ python -m pip install --upgrade pip
 
 ![img.png](images/v_VsBuildTools.png)
 
-Una vez descargada la versión VS Build Tools 3.8.10 (64 Bits) para Windows, se debe seleccionar las opciones, mostradas en la siguiente ilustración: 
+Una vez descargada la versión VS Build Tools 3.8.10, se debe seleccionar las opciones, mostradas en la siguiente ilustración: 
 
 ![img.png](images/i_vsbuildtools2.png)
 
-### 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)   
-
-[Información de la página oficial](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
+### 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)[>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
 
 Descargar las herramientas de línea de comandos de código abierto (LGPLv3) para convertir HTML en PDF y varios formatos de imagen utilizando el motor de renderizado Qt WebKit. La versión a descargar es la siguiente:
 ```
@@ -50,9 +48,9 @@ wkhtmltox-0.12.5-1.msvc2015-win64.exe
 Descargar e instalar de preferencia la versión 2.33.0 (64 Bits) para Windows
 
 
-### 5. Instalación de PostgreSQL 13.4 (64 Bits)
+### 5. Instalación de PostgreSQL
 
-Descargar la versión **PostgreSQL 13.4** para Windows. En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
+En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
 
 A continuación se deberá crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos ***localhost***
 
@@ -70,9 +68,7 @@ A continuación se deberá crear un Rol para gestionar las Bases de Datos [(Crea
 
 ![img.png](images/i_postgresql_7.png)
 
-### 6. Clonación del Repositorio de Odoo 15.0  
-
-[Información de la página oficial](https://github.com/odoo/odoo)
+### 6. Clonación del Repositorio de Odoo 15.0 [>](https://github.com/odoo/odoo)
 
 Se deberá crear un directorio (carpeta), en la ubicación que el usuario a bien tuviere hacerlo, para clonar el repositorio de Odoo
 
