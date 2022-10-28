@@ -12,17 +12,14 @@
 
 ### 1. Instalación de Python
 
-Descargar la versión de Python 3.8.10 (64 Bits) para Windows   
-
-Instalar con las opciones recomendadas, incluyendo el path de Python:
-La ruta del path se debería encontrar en las siguientes rutas:
+La ruta del path se debería encontrarse en las siguientes rutas:
 ```
 C:\Users\......\AppData\Local\Programs\Python\Python38
 ```
 ```
 C:\Users\......\AppData\Local\Programs\Python\Python38\Scripts
 ```
-Se debe seleccionar las opciones, indicadas en la siguiente ilustración:
+Instalar con las opciones recomendadas, incluyendo el path de Python:
 
 ![img.png](images/i_python0.png)
 
