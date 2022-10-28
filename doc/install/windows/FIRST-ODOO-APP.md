@@ -1,19 +1,17 @@
 ## Mi primera Aplicación con Oddo 15.0
 
-### 1. Comando de Odoo con un archivo .conf 
+### 1. Comando de ejecución de Odoo con un archivo .conf 
 El comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
 (venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --save --stop 
 ``` 
-Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor 
-
-Por ejemplo los parámetros: dbname, dbuser y dbpassword pueden ser editados
+Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor.  Por ejemplo los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
 ```
  dbname= odoo15
  dbuser= juan
  dbpassword= ***
 ```
-### 2. Comando de Odoo con un archivo .conf y el puerto http 
+### 2. Comando de Odoo con un archivo .conf y el puerto Http 
 El comando de Odoo puede ser ejecutado con el puerto de la dirección Http:
 ```
 (venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --http-port=8081 
@@ -56,7 +54,7 @@ Para la instalación del Nuevo Módulo, se deberá utilizar el siguiente comando
 ```
 (venv) C:\Projects\odoo> odoo -c odoo.conf (-d nombre_bd) -i library_module
 ```
-La expresión encerrada entre parentesis del comando anterior es opcional, unicamente selecciona la base de datos
+La expresión encerrada entre parentesis del comando anterior es opcional, únicamente selecciona la base de datos. Con la opción **-i**, se pueden instalar varios módulos separados por una coma **,**
 
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
@@ -68,7 +66,7 @@ La expresión encerrada entre parentesis es opcional, selecciona la base de dato
 
 **Agregar un Item al menu principal**
 
-En el directorio **/views** se crea el archivo: library_menu.xml y deberá tener el siguiente contenido:
+En el directorio **/views** se crea el archivo: library_menu.xml, el elemento **<menuitem>**, es una instrucción para escribir un registro en el modelo:**ir.ui.menu**:
 ```
 <odoo>
     <!-- Library App Menu -->
@@ -83,48 +81,46 @@ En el archivo: __manifest__.py, se deberá agregar el siguiente código:
 ```
 **Agregar Grupos de Seguridad**
 
-En el subdirectorio **/security** se debe crear el archivo: **/security/library_security.xml**
-
-En el subdirectorio **/Services/Library** se debe crear el archivo: **/Services/library/base.module_category_services_library**
-
-En el archivo: **/security/library_security.xml**, se deberá agregar el siguiente contenido:
+En el archivo **__manifest__.py** se deberá agregar la categoría :
+```
+"category": "Services/library"
+```
+Una vez asignado el ID XML **(Services/library)**, al módulo categoría **(category)**, se genera automaticamente el prefijo del nombre de la categoría, para este caso tendríamos:
+```
+base.module_category_services_library  ("category": "Services/library")
+```
+Se deberá crear el archivo: **/security/library_security.xml**, y agregar el siguiente contenido:
 ```
 <odoo>
-
   <data>
-  <!-- Library User Group -->
-  <record id="library_group_user" model="res.groups">
-    <field name="name">User</field>
-    <field name="category_id"
+    <!-- Library User Group -->
+    <record id="library_group_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id"
            ref="base.module_category_services_library"/>
-    <field name="implied_ids"
+        <field name="implied_ids"
            eval="[(4, ref('base.group_user'))]"/>
-  </record>
-
-  <!-- Library Manager Group -->
-  <record id="library_group_manager" model="res.groups">
-    <field name="name">Manager</field>
-    <field name="category_id"
-           ref="base.module_category_services_library"/>
-    <field name="implied_ids"
-           eval="[(4, ref('library_group_user'))]"/>
-    <field name="users"
-           eval="[(4, ref('base.user_root')),
-                  (4, ref('base.user_admin'))]"/>
-  </record>
-
-  </data>
-  <data noupdate="1">
-    <record id="book_user_rule" model="ir.rule">
-      <field name="name">Library Book User Access</field>
-      <field name="model_id" ref="model_library_book"/>
-      <field name="domain_force">
-        [('active', '=', True)]
-      </field>
-      <field name="groups" eval="[(4, ref('library_group_user'))]"/>
     </record>
   </data>
-
+</odoo>
+```
+Los XML's (name, category_id y implied_ids), son agregados en un registro al modelo **res.groups**
+Se deberá editar el archivo: **/security/library_security.xml**, y agregar el siguiente contenido
+```
+<odoo>
+  <data>
+    <!-- Library Manager Group -->
+    <record id="library_group_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id"
+           ref="base.module_category_services_library"/>
+        <field name="implied_ids"
+           eval="[(4, ref('library_group_user'))]"/>
+        <field name="users"
+           eval="[(4, ref('base.user_root')),
+                  (4, ref('base.user_admin'))]"/>
+    </record>
+  </data>
 </odoo>
 ```
 El archivo **__manifest.py__**, debería tener las siguientes instrucciones:
@@ -134,6 +130,8 @@ El archivo **__manifest.py__**, debería tener las siguientes instrucciones:
     "views/library_menu.xml",
 ],
 ```
+La instrucción **"security/library_security.xml",**, siempre deberá estar antes de **"views/library_menu.xml",** 
+
 ### 6. Agregar Test Automatizados
 
 Se debe agregar en el directorio **/tests** el archivo **tests/__init__.py**, con el siguiente código: 
@@ -141,6 +139,7 @@ Se debe agregar en el directorio **/tests** el archivo **tests/__init__.py**, co
 from . import test_book
 ```
 En el directorio **/tests**, se debe agregar el archivo **tests/test_book.py**, con el siguiente código:
+Las funciones **test** deberán iniciar con **test_**
 
 ```
 from odoo.tests.common import TransactionCase
@@ -177,6 +176,12 @@ En el archivo **tests/test_book.py**, agregaremos las siguientes líneas de cód
 ```
 **Probando (Testing) la seguridad de acceso**
 
+Se debe agregar dos líneas en la función **def setUp(self,*args,**kwargs)**, la primera busca el registro del usuario **admin** usando XML ID, la segunda línea modifica el ambiente utilizado para arrancar el test **self.env**,cambiando del **usuario activo** al **usuario administrador** 
+
+```
+user_admin = self.env.ref("base.user_admin")
+self.env = self.env(user=user_admin)
+```
 Finalmente el código, quedaría de la siguiente manera:
 
 ```
@@ -208,13 +213,16 @@ class TestBook(TransactionCase):
 
 **Creando un data model**
 
-Crear el archivo **models/__init__.py**, y agregar la siguiente línea de código:
+En el archivo __init__.py se deberá agregar:
+```
+from . import models
+```
+Se deberá crear el archivo **models/__init__.py**, y agregar la siguiente línea de código:
 
 ```
 from . import library_book
 ```
 Crear el archivo **models/library_book.py**, y agregar las siguientes líneas de código:
-
 ```
 from odoo import fields, models
 
@@ -240,6 +248,10 @@ Ahora para ejecutar los cambios, se debe efectuar la **actualización** del mód
 **Seguridad en el Control de Acceso**
 
 Para acceder a las reglas de acceso del modelo, podemos navegar en la aplicación web en el apartado: **Settings|Technical|Security|Access Rights** 
+
+Se podría otorgar accesos a los usuarios de la biblioteca para leer, escribir, crear libros y otorgar acceso completo al **administrador** de la biblioteca.
+
+Estos permisos de acceso pueden ser proporcionados por un archivo de datos de módulo, cargando los registros en el **ir.model**
 
 En el directorio **/security**, se debe agregar el archivo **security/ir.model.access.csv**, con el siguiente código:
 ```
@@ -350,7 +362,15 @@ El archivo **views/library_menu.xml**, deberá contener el siguiente código:
 
 </odoo>
 ```
+
+Este archivo de datos describe dos registros de la siguiente manera:
+
+• El elemento <record>  define una acción de ventana del lado del cliente, para abrir el Modelo Library.Book con las vistas de árbol y formulario habilitadas, en ese orden.
+• El elemento <menuitem> for Books, ejecutando la acción **action_library_book**
+
 **Creación de una vista de formulario**
+
+Las Vistas son registros de datos almacenados en la base de datos en el modelo **ir.ui.view**, las cuales se almacenan con el elemento **<record>**, descrito en la vista **views/book_view.xml**
 
 Se crea el archivo **views/book_view.xml**, el cuál deberá tener el siguiente código:
 
@@ -376,7 +396,7 @@ Se crea el archivo **views/book_view.xml**, el cuál deberá tener el siguiente 
     
 </odoo>
 ```
-En el archivo: **__manifest__.py** del root,  se deberá, agregar la línea de código: **views/book_view.xml**:
+En el archivo: **__manifest__.py** del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
 
 ```
     'name': "library_module",
@@ -645,29 +665,15 @@ class Books(http.Controller):
             {"books": books}
         )
 ```
+La anotación **@http.route** es importante ya que declara que el extremo de la URL está enlazado: a **/books** 
+
+El paso final es usar http.request.render() para procesar el **library_app**, para que la plantilla QWeb **index_template** genere el HTML de salida, para lo cual se debe generar la plantilla 
+
 **Agregando un QWeb Template**
 
-Se deberá crear el archivo: **views/book_list_template.xml**, y se deberán agregar las siguientes líneas de código:
+El archivo de datos de plantilla QWeb debe declararse en el **__manifest__.py** del módulo, como cualquier otro archivo de datos XML, para que se cargue y pueda estar disponible.
 
-```
-<odoo>
-
-<template id="book_list_template" name="Book List">
-  <div id="wrap" class="container">
-    <h1>Books</h1>
-      <t t-foreach="books" t-as="book">
-        <div class="row">
-          <span t-field="book.name" />,
-          <span t-field="book.date_published" />,
-          <span t-field="book.publisher_id" />
-        </div>
-      </t>
-  </div>
-</template>
-
-</odoo>
-```
-En el archivo **/__manifest__.py**, se deberá agregar  la línea de código: **views/book_list_template.xml**, en el apartado **data[]**, quedando de la siguiente manera:
+En el archivo **/__manifest__.py**, se deberá agregar la línea de código: **views/book_list_template.xml**, en el apartado **data[]**, quedando de la siguiente manera:
 
 ```
 {
@@ -691,8 +697,37 @@ En el archivo **/__manifest__.py**, se deberá agregar  la línea de código: **
 }
 
 ```
+Se deberá crear el archivo: **views/book_list_template.xml**. 
+
+El elemento **<template>** declara una plantilla QWeb. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
+
+El atributo **t-foreach** se utiliza para recorrer los elementos de la variable **books**, disponibles para la plantilla mediante la llamada **http.request.render()** del controlador. 
+
+El atributo **t-field** se encarga de representar correctamente el contenido de un campo de registro Odoo.
+
+A continuación se deberán agregar las siguientes líneas de código:
+
+```
+<odoo>
+
+<template id="book_list_template" name="Book List">
+  <div id="wrap" class="container">
+    <h1>Books</h1>
+      <t t-foreach="books" t-as="book">
+        <div class="row">
+          <span t-field="book.name" />,
+          <span t-field="book.date_published" />,
+          <span t-field="book.publisher_id" />
+        </div>
+      </t>
+  </div>
+</template>
+
+</odoo>
+```
+
 Después de la declaración del archivo **"views/book_list_template.xml"**, en el **__manifest__.py** y realizado la actualización del módulo. 
-La página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deverían de listar los libros disponibles  
+La página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deberían de listar los libros disponibles  
 
 **Seguridad de Acceso**
 
