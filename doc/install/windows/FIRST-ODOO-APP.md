@@ -20,14 +20,14 @@ El comando de Odoo puede ser ejecutado con el puerto de la dirección Http:
 ```
 ### 3. Gestión de los mensajes Log del Servidor 
 
-Los niveles de información pueden tener los siguientes tipos: **warning/error/critical**
+Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**
 
 En el archivo ./myfile.conf, se pueden configurar los siguientes parámetros: 
 ```
 log_db= False
 log_db_level= warning
 log_hanler=:INFO
-log_level= info   warning/error/critical
+log_level= info   warn/error/critical
 logfile= ./mylog.log   
 ```
 ### 4. Creación de un nuevo módulo addons
