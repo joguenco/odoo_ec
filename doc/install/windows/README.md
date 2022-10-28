@@ -23,7 +23,7 @@ Instalar con las opciones recomendadas, incluyendo el path de Python:
 
 ![img.png](images/i_python0.png)
 
-Es opcional la actualización del pip
+La actualización del pip es opcional 
 ```
 python -m pip install --upgrade pip 
 ```
