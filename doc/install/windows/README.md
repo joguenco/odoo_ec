@@ -10,7 +10,7 @@
  - Odoo **15.0**           
 
 
-### 1. Instalación de Python ![>](images/i_python0.png)
+### 1. Instalación de Python
 
 La ruta del path se debería encontrarse en las siguientes rutas:
 ```
