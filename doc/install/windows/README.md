@@ -131,7 +131,7 @@ Se deberá seleccionar la opción [E] Ejecutar para siempre, y si todos los paso
 ```
 (venv)PS C:\Users\admin\Projects\odoo>
 ```
-Para la instalación de todos los requerimientos de la instancia de odoo en la computadora local, se ejecutará el siguiente comando:
+**Para la instalación de todos los requerimientos de la instancia de odoo en la computadora local, se ejecutará el siguiente comando:**
 
 ```
 (venv)PS C:\Users\admin\Projects\odoo> pip install -r requirements.txt
