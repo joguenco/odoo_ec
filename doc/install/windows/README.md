@@ -74,10 +74,8 @@ Ejecutaremos el siguiente comando :
 ```
 $ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
-La sección: $ ***git clone***, es propia del comando de clonación de Odoo  
-```
-$ git clone 
-```
+La expresión: $ ***git clone***, es propia del comando de clonación de Odoo  
+
 La sección: ***https://github.com/odoo/odoo.git***, corresponde al comando de clonación de Odoo  
 ```
 https://github.com/odoo/odoo.git
