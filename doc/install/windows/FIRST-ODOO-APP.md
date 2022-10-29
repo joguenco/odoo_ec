@@ -1,7 +1,7 @@
 ## Mi primera Aplicación con Oddo 15.0
 
 ### 1. Comando de ejecución de Odoo con un archivo .conf 
-El comando de Odoo puede ser ejecutado de la siguiente manera:
+_El_ comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
 (venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --save --stop 
 ``` 
