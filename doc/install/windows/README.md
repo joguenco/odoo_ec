@@ -10,7 +10,7 @@
  - Odoo **15.0**           
 
 
-### 1. Instalación de Python
+### 1. Instalación de Python ![>](images/i_python0.png)
 
 La ruta del path se debería encontrarse en las siguientes rutas:
 ```
@@ -19,11 +19,7 @@ C:\Users\......\AppData\Local\Programs\Python\Python38
 ```
 C:\Users\......\AppData\Local\Programs\Python\Python38\Scripts
 ```
-Instalar con las opciones recomendadas, incluyendo el path de Python:
-
-![img.png](images/i_python0.png)
-
-La actualización del pip es opcional 
+**La actualización del pip es opcional** 
 ```
 python -m pip install --upgrade pip 
 ```
