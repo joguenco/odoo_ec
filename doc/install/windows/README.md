@@ -104,11 +104,11 @@ passlib==1.7.2
 cryptography==3.4.8
 ```
 
-### 7. Instalación de ***venv*** Python (Entorno Virtual de Python) 
+## 7. Instalación de ***venv*** Python (Entorno Virtual de Python) 
 
 ***Únicamente en el caso***, que no se ejecutacen los comandos de Python en las carpetas de Windows, se deberán utilizar los siguientes comandos: 
 
-### Paso 1:
+## Paso 1:
 ```
 C:\Users\admin\Projects\odoo> Get-ExecutionPolicy
 ```
