@@ -105,15 +105,15 @@ cryptography==3.4.8
 
 ***Únicamente en el caso***, que no se ejecutacen los comandos de Python en las carpetas de Windows, se deberán utilizar los siguientes comandos: 
 
-## Paso 1:
+**Paso 1:**
 ```
 C:\Users\admin\Projects\odoo> Get-ExecutionPolicy
 ```
-## Paso 2:
+**Paso 2:**
 ```
 C:\Users\admin\Projects\odoo> Get-ExecutionPolicy -List
 ```
-## Paso 3:
+**Paso 3:**
 Se deberá abrir otra terminal con permisos de Administrador y ejecutar el siguiente comando:
 ```
 C:\Users\admin>Set-ExecutionPolicy  -ExecutionPolicy AllSigned
