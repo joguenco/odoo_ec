@@ -90,14 +90,8 @@ A continuación, en el directorio de clonación se deberá de editar el archivo 
 
 ```
 python-stdnum==1.16
-```
-```
 libsass==0.21.0
-```
-```
 passlib==1.7.2
-```
-```
 cryptography==3.4.8
 ```
 
