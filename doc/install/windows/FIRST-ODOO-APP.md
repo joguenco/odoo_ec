@@ -699,7 +699,7 @@ En el archivo **/__manifest__.py**, se deberá agregar la línea de código: **v
 ```
 Se deberá crear el archivo: **views/book_list_template.xml**. 
 
-El elemento **<template>** declara una plantilla QWeb. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
+El elemento **template**  declara una plantilla QWeb. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
 
 El atributo **t-foreach** se utiliza para recorrer los elementos de la variable **books**, disponibles para la plantilla mediante la llamada **http.request.render()** del controlador. 
 
