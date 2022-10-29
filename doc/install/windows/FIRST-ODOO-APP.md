@@ -1,6 +1,6 @@
 ## Mi primera Aplicación con Oddo 15.0
 
-### 1. Comando de ejecución de Odoo con un archivo .conf 
+## 1. Comando de ejecución de Odoo con un archivo .conf 
 El comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
 (venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --save --stop 
@@ -11,13 +11,13 @@ Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del ser
  dbuser= juan
  dbpassword= ***
 ```
-### 2. Comando de Odoo con un archivo .conf y el puerto http 
+## 2. Comando de Odoo con un archivo .conf y el puerto http 
 
 El comando de Odoo puede ser ejecutado con el puerto de la dirección http:
 ```
 (venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --http-port=8081 
 ```
-### 3. Gestión de los mensajes Log del Servidor 
+## 3. Gestión de los mensajes Log del Servidor 
 
 Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**
 
@@ -29,7 +29,7 @@ log_hanler=:INFO
 log_level= info   warn/error/critical
 logfile= ./mylog.log   
 ```
-### 4. Creación de un nuevo módulo addons
+## 4. Creación de un nuevo módulo addons
 
 El path de la ubicación **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:
 ```
@@ -63,7 +63,7 @@ Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
 La expresión encerrada entre parentesis es opcional, selecciona la base de datos
 
-### 5. Creando una nueva Aplicación
+## 5. Creando una nueva Aplicación
 
 **Agregar un Item al menu principal**
 
@@ -133,7 +133,7 @@ El archivo **__manifest.py__**, debería tener las siguientes instrucciones:
 ```
 La instrucción **"security/library_security.xml",**, siempre deberá estar antes de **"views/library_menu.xml",** 
 
-### 6. Agregar Test Automatizados
+## 6. Agregar Test Automatizados
 
 Se debe agregar en el directorio **/tests** el archivo **tests/__init__.py**, con el siguiente código: 
 ```
@@ -210,7 +210,7 @@ class TestBook(TransactionCase):
         self.assertTrue(self.book1._check_isbn)
 ```
 
-### 7. Implementando la capa del modelo
+## 7. Implementando la capa del modelo
 
 **Creando un data model**
 
@@ -244,7 +244,7 @@ Ahora para ejecutar los cambios, se debe efectuar la **actualización** del mód
 ```
 (venv) C:\Projects\odoo> odoo -c odoo.conf -u library_module
 ```
-### 8. Configurando la seguridad de acceso
+## 8. Configurando la seguridad de acceso
 
 **Seguridad en el Control de Acceso**
 
@@ -339,7 +339,7 @@ Finalmente el archivo: **security/library-security.xml**, quedaría de la siguie
 </odoo>
 ```
 
-### 9. Implementando la capa de vista de backend
+## 9. Implementando la capa de vista de backend
 
 **Agregar elementos de menú**
 
@@ -592,7 +592,7 @@ Finalmente el código del archivo **views/book_view.xml**, quedaría de la sigui
 </odoo>
 
 ```
-### 10. Implementación de la capa lógica del negocio  
+## 10. Implementación de la capa lógica del negocio  
 
 **Agregar la lógica en la capa del negocio**
 
@@ -636,7 +636,7 @@ class Book(models.Model):
         return True
 ```
 
-### 11. Implementación de la Interfaz de Usuario del WebSite
+## 11. Implementación de la Interfaz de Usuario del WebSite
 
 **Agregar el Controlador EndPoint**
 
@@ -730,7 +730,7 @@ A continuación se deberán agregar las siguientes líneas de código:
 Después de la declaración del archivo **"views/book_list_template.xml"**, en el **__manifest__.py** y realizado la actualización del módulo. 
 La página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deberían de listar los libros disponibles  
 
-**Seguridad de Acceso**
+## Seguridad de Acceso
 
 ```
 Access security
