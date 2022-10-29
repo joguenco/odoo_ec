@@ -3,16 +3,17 @@
 ### 1. Comando de ejecución de Odoo con un archivo .conf 
 El comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
-__(venv)__ C:\odoo\odoo>python odoo-bin -c ./myfile.conf --save --stop 
+(venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --save --stop 
 ``` 
-Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor.  Por ejemplo los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
+Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor.  Los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
 ```
  dbname= odoo15
  dbuser= juan
  dbpassword= ***
 ```
-### 2. Comando de Odoo con un archivo .conf y el puerto Http 
-El comando de Odoo puede ser ejecutado con el puerto de la dirección Http:
+### 2. Comando de Odoo con un archivo .conf y el puerto http 
+
+El comando de Odoo puede ser ejecutado con el puerto de la dirección http:
 ```
 (venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --http-port=8081 
 ```
@@ -50,7 +51,7 @@ Comando para añadir una base de datos, sin datos demostrativos (**datos de prue
 ```
 (venv) C:\Projects\odoo> odoo -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
 ```
-Para la instalación del Nuevo Módulo, se deberá utilizar el siguiente comando:
+Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:
 ```
 (venv) C:\Projects\odoo> odoo -c odoo.conf (-d nombre_bd) -i library_module
 ```
@@ -105,7 +106,7 @@ Se deberá crear el archivo: **/security/library_security.xml**, y agregar el si
 </odoo>
 ```
 Los XML's (name, category_id y implied_ids), son agregados en un registro al modelo **res.groups**
-Se deberá editar el archivo: **/security/library_security.xml**, y agregar el siguiente contenido
+Se deberá editar el archivo: **/security/library_security.xml**, y agregar el siguiente contenido:
 ```
 <odoo>
   <data>
@@ -139,7 +140,7 @@ Se debe agregar en el directorio **/tests** el archivo **tests/__init__.py**, co
 from . import test_book
 ```
 En el directorio **/tests**, se debe agregar el archivo **tests/test_book.py**, con el siguiente código:
-Las funciones **test** deberán iniciar con **test_**
+Las funciones **test** deberán iniciar con la siguiente expresión: **test_**
 
 ```
 from odoo.tests.common import TransactionCase
@@ -253,7 +254,7 @@ Se podría otorgar accesos a los usuarios de la biblioteca para leer, escribir, 
 
 Estos permisos de acceso pueden ser proporcionados por un archivo de datos de módulo, cargando los registros en el **ir.model**
 
-En el directorio **/security**, se debe agregar el archivo **security/ir.model.access.csv**, con el siguiente código:
+En el directorio **/security**, se debe agregar el archivo **security/ir.model.access.csv**, con el siguiente contenido:
 ```
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_book_user,BookUser,model_library_book,library_group_user,1,1,1,0
@@ -491,7 +492,7 @@ En el archivo **views/book_view.xml**,citado anteriormente, se organizan los ele
 ```
 **Agregando Listas y Vistas de busqueda**
 
-El elemento **<tree>** deberá contener los campos que se presentarán como columnas, otra vez se edita el archivo **views/book_view.xml**, agregando el siguiente código antes del elemento **</odoo>**
+El elemento **<tree>** deberá contener los campos que se presentarán como columnas, nuevamente se edita el archivo **views/book_view.xml**, agregando el siguiente código antes del elemento **</odoo>**
 ```
   <record id="view_tree_book" model="ir.ui.view">
     <field name="name">Book List</field>
@@ -667,11 +668,11 @@ class Books(http.Controller):
 ```
 La anotación **@http.route** es importante ya que declara que el extremo de la URL está enlazado: a **/books** 
 
-El paso final es usar http.request.render() para procesar el **library_app**, para que la plantilla QWeb **index_template** genere el HTML de salida, para lo cual se debe generar la plantilla 
+El paso final es usar **http.request.render()** para procesar el **library_app**, para que la plantilla QWeb **index_template** genere el HTML de salida 
 
 **Agregando un QWeb Template**
 
-El archivo de datos de plantilla QWeb debe declararse en el **__manifest__.py** del módulo, como cualquier otro archivo de datos XML, para que se cargue y pueda estar disponible.
+El archivo de datos de plantilla **QWeb** debe declararse en el **__manifest__.py** del módulo, como cualquier otro archivo de datos XML, para que se cargue y pueda estar disponible.
 
 En el archivo **/__manifest__.py**, se deberá agregar la línea de código: **views/book_list_template.xml**, en el apartado **data[]**, quedando de la siguiente manera:
 
@@ -699,7 +700,7 @@ En el archivo **/__manifest__.py**, se deberá agregar la línea de código: **v
 ```
 Se deberá crear el archivo: **views/book_list_template.xml**. 
 
-El elemento **template**  declara una plantilla QWeb. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
+El elemento **template**  declara una plantilla **QWeb**. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
 
 El atributo **t-foreach** se utiliza para recorrer los elementos de la variable **books**, disponibles para la plantilla mediante la llamada **http.request.render()** del controlador. 
 
