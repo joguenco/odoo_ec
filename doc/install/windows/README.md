@@ -39,7 +39,7 @@ wkhtmltox-0.12.5-1.msvc2015-win64.exe
 
 ### 4. Instalación de Git  
 
-Descargar e instalar de preferencia la versión 2.33.0 (64 Bits) para Windows
+Descargar e instalar de preferencia la versión 2.33.0
 
 
 ### 5. Instalación de PostgreSQL
