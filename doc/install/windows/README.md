@@ -71,9 +71,9 @@ Ejecutaremos el siguiente comando :
 ```
 $ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
-La **expresión**: $ ***git clone***, es propia del comando de clonación de Odoo  
+La **expresión**: $ ***git clone***, es propia del comando de clonación  
 
-La **expresión**: ***https://github.com/odoo/odoo.git***, corresponde al propio comando de clonación de Odoo  
+La **expresión**: ***https://github.com/odoo/odoo.git***, corresponde al comando de clonación de Odoo  
 
 La **expresión**: ***--depth=1 -b 15.0***, corresponde a la última versión de Odoo 15.0
 
