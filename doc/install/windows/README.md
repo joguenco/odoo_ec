@@ -123,11 +123,11 @@ Se deberá abrir otra terminal con permisos de Administrador y ejecutar el sigui
 ```
 C:\Users\admin>Set-ExecutionPolicy  -ExecutionPolicy AllSigned
 ```
-Una vez superados los pasos anteriores se deberá ejecutar el siguiente comando en la ruta (Ejemplo):
+**Una vez superados los pasos anteriores se deberá ejecutar el siguiente comando en la ruta (Ejemplo):**
 ```
 C:\Users\admin>pip install virtualenv
 ```
-Para crear los Scripts del proyecto se deberá ejecutar el siguiente comando en la ruta (Ejemplo): 
+**Para crear los Scripts del proyecto se deberá ejecutar el siguiente comando en la ruta (Ejemplo):** 
 ```
 C:\Users\admin\Projects\odoo>python -m venv ./venv
 ```
