@@ -28,7 +28,6 @@ python -m pip install --upgrade pip
 
 Una vez descargada la versión VS Build Tools 3.8.10, se debe seleccionar las opciones, mostradas en la siguiente ilustración: 
 
-![img.png](images/i_vsbuildtools2.png)
 ![img.png](images/library_.png)
 
 ## 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)[>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
