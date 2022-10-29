@@ -110,6 +110,7 @@ Se deberá abrir otra terminal con **permisos de Administrador** y ejecutar el s
 ```
 C:\Users\admin>Set-ExecutionPolicy  -ExecutionPolicy AllSigned
 ```
+
 **Una vez superados los pasos anteriores se deberá ejecutar el siguiente comando en la ruta (Ejemplo):**
 ```
 C:\Users\admin>pip install virtualenv
