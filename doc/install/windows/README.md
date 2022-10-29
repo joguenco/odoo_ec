@@ -114,7 +114,7 @@ C:\Users\admin\Projects\odoo> Get-ExecutionPolicy
 C:\Users\admin\Projects\odoo> Get-ExecutionPolicy -List
 ```
 **Paso 3:**
-Se deberá abrir otra terminal con permisos de Administrador y ejecutar el siguiente comando:
+Se deberá abrir otra terminal con **permisos de Administrador** y ejecutar el siguiente comando:
 ```
 C:\Users\admin>Set-ExecutionPolicy  -ExecutionPolicy AllSigned
 ```
