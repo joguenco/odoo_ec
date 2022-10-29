@@ -144,15 +144,13 @@ Se abrirá un terminal y se ejecutará el siguiente comando:
 ```
 (venv)PS C:\Users\admin\Projects\odoo> python odoo-bin -d odoo15 -r graham -w mypassword
 ```
-```
-El parametro: -d odoo15 es la conexión del servidor creada en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
-```
-```
-El parametro: -r graham es el nombre del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
-```
-```
-El parametro: -w mypassword es el password del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
-```
+
+El **parametro: -d odoo15** es la conexión del servidor creada en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
+
+El **parametro: -r graham** es el nombre del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
+
+El **parametro: -w mypassword** es el password del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
+
 Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y escribir la siguiente URL:
 ```
 
