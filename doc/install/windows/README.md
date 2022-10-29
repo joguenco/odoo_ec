@@ -30,6 +30,7 @@ Una vez descargada la versión VS Build Tools 3.8.10, se debe seleccionar las op
 
 ![img.png](images/i_vsbuildtools2.png)
 
+
 ## 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)[>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
 
 Descargar las herramientas de línea de comandos de código abierto (LGPLv3) para convertir HTML en PDF y varios formatos de imagen utilizando el motor de renderizado Qt WebKit. La versión a descargar es la siguiente:
@@ -49,7 +50,7 @@ En la instalación se deberan seleccionar los items señalados en las siguientes
 A continuación se deberá crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos ***localhost***
 
 ![img.png](images/i_postgresql_2.png)
-
+![](images/library.jpg)
 En el Tab ***Connection***, se deberá ingresar un Password
 
 ![img.png](images/i_postgresql_3.png)
