@@ -1,6 +1,6 @@
 ## Manual de Instalación de Oddo 15.0 en Windows 11
 
-### Requerimientos 
+## Requerimientos 
 
  - Python **3.8.10**        
  - VS Build Tools **16.11.4** 
@@ -10,7 +10,7 @@
  - Odoo **15.0**           
 
 
-### 1. Instalación de Python
+## 1. Instalación de Python
 
 La ruta del path se debería encontrarse en las siguientes rutas:
 ```
@@ -24,25 +24,25 @@ C:\Users\......\AppData\Local\Programs\Python\Python38\Scripts
 python -m pip install --upgrade pip 
 ```
 
-### 2. Instalación de VS Build Tools [>](https://visualstudio.microsoft.com/es/downloads/)
+## 2. Instalación de VS Build Tools [>](https://visualstudio.microsoft.com/es/downloads/)
 
 Una vez descargada la versión VS Build Tools 3.8.10, se debe seleccionar las opciones, mostradas en la siguiente ilustración: 
 
 ![img.png](images/i_vsbuildtools2.png)
 
-### 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)[>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
+## 3. Instalación de herramientas de línea de comandos (wkhtmltopdf)[>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)
 
 Descargar las herramientas de línea de comandos de código abierto (LGPLv3) para convertir HTML en PDF y varios formatos de imagen utilizando el motor de renderizado Qt WebKit. La versión a descargar es la siguiente:
 ```
 wkhtmltox-0.12.5-1.msvc2015-win64.exe
 ```
 
-### 4. Instalación de Git  
+## 4. Instalación de Git  
 
 Descargar e instalar de preferencia la versión 2.33.0
 
 
-### 5. Instalación de PostgreSQL
+## 5. Instalación de PostgreSQL
 
 En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
 
@@ -62,7 +62,7 @@ A continuación se deberá crear un Rol para gestionar las Bases de Datos [(Crea
 
 ![img.png](images/i_postgresql_7.png)
 
-### 6. Clonación del Repositorio de Odoo 15.0 [>](https://github.com/odoo/odoo)
+## 6. Clonación del Repositorio de Odoo 15.0 [>](https://github.com/odoo/odoo)
 
 Se deberá crear un directorio (carpeta), en la ubicación que el usuario a bien tuviere hacerlo, para clonar el repositorio de Odoo
 
@@ -144,19 +144,15 @@ Se deberá seleccionar la opción [E] Ejecutar para siempre, y si todos los paso
 Para la instalación de todos los requerimientos de la instancia de odoo en la computadora local, se ejecutará el siguiente comando:
 
 ```
-
 (venv)PS C:\Users\admin\Projects\odoo> pip install -r requirements.txt
-
 ```
 
-### 8. Ejecución de Odoo 15.0
+## 8. Ejecución de Odoo 15.0
 
 Se abrirá un terminal y se ejecutará el siguiente comando:
 
 ```
-
 (venv)PS C:\Users\admin\Projects\odoo> python odoo-bin -d odoo15 -r graham -w mypassword
-
 ```
 ```
 El parametro: -d odoo15 es la conexión del servidor creada en la Sección 4. Instalación de PostgreSQL 13.4 (64 Bits)
