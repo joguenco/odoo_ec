@@ -77,6 +77,7 @@ La expresión: ***https://github.com/odoo/odoo.git***, corresponde al comando de
 
 La expresión: ***--depth=1 -b 15.0***, corresponde a la última versión de Odoo 15.0
 
+
 Una vez clonado el repositorio de Odoo 15.0, se deberá ingresar en la carpeta creada, llamada odoo y se ejecutará el siguiente comando:
 ```
 C:\odoo\odoo>pip install setuptools wheel
