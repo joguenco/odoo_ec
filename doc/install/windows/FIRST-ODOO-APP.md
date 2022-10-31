@@ -3,19 +3,19 @@
 ## 1. Comando de ejecución de Odoo con un archivo .conf 
 El comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
-(venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --save --stop 
+(venv) C:\odoo\odoo> python odoo-bin -c ./myfile.conf --save --stop 
 ``` 
 Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor.  Los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
 ```
  dbname= odoo15
- dbuser= juan
  dbpassword= ***
+ dbuser= juan
 ```
 ## 2. Comando de Odoo con un archivo .conf y el puerto http 
 
 El comando de Odoo puede ser ejecutado con el puerto de la dirección http:
 ```
-(venv) C:\odoo\odoo>python odoo-bin -c ./myfile.conf --http-port=8081 
+(venv) C:\odoo\odoo> python odoo-bin -c ./myfile.conf --http-port=8081 
 ```
 ## 3. Gestión de los mensajes Log del Servidor 
 
@@ -41,25 +41,25 @@ C:\Projects\odoo\custom-addons
 ```
 Comando para añadir un **addons-path**   
 ```
-(venv) C:\Projects\odoo> odoo --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
+(venv) C:\Projects\odoo> python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
 ```
 Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando  **scaffold**   
 ```
-(venv) C:\Projects\odoo> odoo scaffold mi_modulo ./custom-addons
+(venv) C:\Projects\odoo> python odoo-bin scaffold mi_modulo ./custom-addons
 ```
 Comando para añadir una base de datos, sin datos demostrativos (**datos de prueba**)     
 ```
-(venv) C:\Projects\odoo> odoo -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
+(venv) C:\Projects\odoo> python odoo-bin -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
 ```
 Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:
 ```
-(venv) C:\Projects\odoo> odoo -c odoo.conf (-d nombre_bd) -i library_module
+(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf (-d nombre_bd) -i library_module
 ```
 La expresión encerrada entre parentesis del comando anterior es opcional, únicamente selecciona la base de datos. Con la opción **-i**, se pueden instalar varios módulos separados por una coma **,**
 
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
-(venv) C:\Projects\odoo> odoo -c odoo.conf (-d nombre_bd) -u library_module
+(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf (-d nombre_bd) -u library_module
 ```
 La expresión encerrada entre parentesis es opcional, selecciona la base de datos
 
@@ -164,7 +164,7 @@ class TestBook(TransactionCase):
 
 Con el siguiente comando se arrancan los test: 
 ```
-(venv) C:\Projects\odoo> odoo -c odoo.conf -u library_module --test-enable
+(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Probando (Testing) la lógica del negocio**
 
@@ -242,7 +242,7 @@ class Book(models.Model):
 Ahora para ejecutar los cambios, se debe efectuar la **actualización** del módulo **library_module**, con el siguiente comando:   
 
 ```
-(venv) C:\Projects\odoo> odoo -c odoo.conf -u library_module
+(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf -u library_module
 ```
 ## 8. Configurando la seguridad de acceso
 
@@ -270,7 +270,7 @@ En el archivo **__manifest__.py**, se debería agregar la siguiente línea de c�
 ```
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
-(venv) C:\Projects\odoo> odoo -c odoo.conf -u library_module --test-enable
+(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Reglas de acceso a nivel de fila**
 
