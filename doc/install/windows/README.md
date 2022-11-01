@@ -12,7 +12,7 @@
 
 ## 1. Instalación de Python
 
-Una vez terminada la instalación, la **ruta del path** se encuentra generalmente en la siguiente ubicación: **C:\Users\...\AppData\Local\Programs\Python\Python38**
+Una vez terminada la instalación, la **ruta del path** se encuentra generalmente en la siguiente ubicación: **C:\...\AppData\Local\Programs\Python\Python38**
 
 **La actualización del pip es opcional** 
 ```
