@@ -1,4 +1,4 @@
-## Mi primera aplicación con Oddo 15.0
+## Mi primera aplicación con Odoo 15.0
 
 ## 1. Comando de ejecución de Odoo con un archivo .conf 
 El comando de Odoo puede ser ejecutado de la siguiente manera:
