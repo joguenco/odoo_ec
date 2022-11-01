@@ -21,7 +21,7 @@ python -m pip install --upgrade pip
 
 ## 2. Instalación de VS Build Tools 
 
-Una vez descargada la versión [**VS Build Tools 3.8.10**](https://visualstudio.microsoft.com/es/downloads/), se deberá instalar, seleccionando las opciones, mostradas en la ilustración adjunta [>](images/library_.png)  
+Una vez descargada la versión [**VS Build Tools 3.8.10**](https://visualstudio.microsoft.com/es/downloads/), se deberá instalar, seleccionando las opciones, mostradas en la [***ilustración adjunta***](images/library_.png)  
 
 
 
