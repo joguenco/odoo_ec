@@ -1,4 +1,4 @@
-## Manual de Instalación de Oddo 15.0 en Windows 11
+## Manual de Instalación de Odoo 15.0 en Windows 11
 
 ## Requerimientos 
 
