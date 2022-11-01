@@ -87,10 +87,8 @@ Para habilitar el ***entorno virtual***, se deberá ejecutar el siguiente comand
 ```
 .\venv\Scripts\activate
 ```
-Se deberá seleccionar la opción [E] Ejecutar para siempre, y si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, tendrá el siguiente aspecto:
-```
-(venv)PS C:\Users\admin\Projects\odoo>
-```
+Si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, tendrá el siguiente aspecto: **(venv)PS C:\Users\admin\Projects\odoo>**
+
 **Para la instalación de todos los requerimientos de la instancia de odoo en la computadora local, se ejecutará el siguiente comando:**
 
 ```
