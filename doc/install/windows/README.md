@@ -31,11 +31,9 @@ Se deberán instalar las herramientas de línea de comandos de código abierto *
 
 ## 4. Instalación de PostgreSQL
 
-En la instalación se deberan seleccionar los items señalados en las siguientes ilustraciones:
+Crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos **localhost** y en el **Tab** ***Connection***, se deberá ingresar el **Password**  
 
-Crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos ***localhost*** y en el **Tab*****Connection***, se deberá ingresar el **Password**  
-
-![img.png](images/i_postgresql_2.png)
+![img.png](images/i_postgresql__2.png)
 
 En el Tab ***Connection***, se deberá ingresar un Password
 
