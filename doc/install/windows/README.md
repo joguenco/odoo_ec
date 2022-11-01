@@ -27,17 +27,13 @@ Una vez descargada la versión **VS Build Tools 3.8.10** [>](https://visualstudi
 
 ## 3. Instalación de herramientas de línea de comandos
 
-Se deberán instalar las herramientas de línea de comandos de código abierto ***wkhtmltopdf-0.12.5-1 [>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)***, destinadas a la conversión de HTML a PDF, con la  utilización del motor de renderizado **Qt WebKit**. 
+Se deberán instalar las herramientas de línea de comandos de código abierto **wkhtmltopdf-0.12.5-1 [>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)**, destinadas a la conversión de HTML a PDF, con la  utilización del motor de renderizado **Qt WebKit**. 
 
 ## 4. Instalación de PostgreSQL
 
 Crear una nueva conexión con el servidor de PostgreSQL, para este caso la llamaremos **localhost** y en el **Tab** ***Connection***, se deberá ingresar un **Password**  
 
 ![img.png](images/i_post_2.png)
-
-En el Tab ***Connection***, se deberá ingresar un Password
-
-![img.png](images/i_postgresql_3.png)
 
 A continuación se deberá crear un Rol para gestionar las Bases de Datos [(Creación del Rol)](images/i_postgresql__4.png)
 
