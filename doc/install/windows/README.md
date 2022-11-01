@@ -103,15 +103,13 @@ Se abrirá un terminal y se ejecutará el siguiente comando:
 python odoo-bin -d odoo15 -r Juan -w mi_password
 ```
 
-El **parametro: -d odoo15** es la conexión del servidor creada en la Sección 4. Instalación de PostgreSQL 13.4 
+El **parametro: -d odoo15** es la conexión del servidor creada en la **Sección 4. Instalación de PostgreSQL**
 
-El **parametro: -r graham** es el nombre del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4
+El **parametro: -r Juan** es el nombre del Rol, asignado en la **Sección 4. Instalación de PostgreSQL**
 
-El **parametro: -w mypassword** es el password del Rol, asignado en la Sección 4. Instalación de PostgreSQL 13.4
+El **parametro: -w mi_password** es el password del Rol, asignado en la **Sección 4. Instalación de PostgreSQL**
 
-Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y escribir la siguiente URL:
+Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y utilizar la siguiente URL:
 ```
-
 http://localhost:8069
-
 ```
