@@ -35,11 +35,11 @@ Crear una nueva conexión con el servidor de PostgreSQL, para este caso la llama
 
 ![img.png](images/i_post_2.png)
 
-A continuación se deberá crear un Rol para gestionar las Bases de Datos [(Creación del Rol)](images/i_postgresql__4.png)
+A continuación se deberá crear un Rol para gestionar la Base de Datos, para este caso el **Nombre del Rol** es: ***Juan***, en el **Tab** ***Definition***, se deberá ingresar un **Password**
 
-![img_1.png](images/i_postgresql_5.png)
+![img.png](images/i_post_5.png)
 
-![img.png](images/i_postgresql_6.png)
+Y se deberán seleccionar las opciones indicadas a continuación:
 
 ![img.png](images/i_postgresql_7.png)
 
