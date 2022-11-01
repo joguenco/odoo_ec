@@ -21,13 +21,13 @@ python -m pip install --upgrade pip
 
 ## 2. Instalación de VS Build Tools 
 
-Una vez descargada la versión **VS Build Tools 3.8.10** [>](https://visualstudio.microsoft.com/es/downloads/), se deberá instalar, seleccionando las opciones, mostradas en la ilustración adjunta [>](images/library_.png)  
+Una vez descargada la versión [**VS Build Tools 3.8.10**](https://visualstudio.microsoft.com/es/downloads/), se deberá instalar, seleccionando las opciones, mostradas en la ilustración adjunta [>](images/library_.png)  
 
 
 
 ## 3. Instalación de herramientas de línea de comandos
 
-Se deberán instalar las herramientas de línea de comandos de código abierto [wkhtmltopdf-0.12.5-1](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5), destinadas a la conversión de HTML a PDF, con la  utilización del motor de renderizado **Qt WebKit**. 
+Se deberán instalar las herramientas de línea de comandos de código abierto [**wkhtmltopdf-0.12.5-1**](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5), destinadas a la conversión de HTML a PDF, con la  utilización del motor de renderizado **Qt WebKit**. 
 
 ## 4. Instalación de PostgreSQL
 
