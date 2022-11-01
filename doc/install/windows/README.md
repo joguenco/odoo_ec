@@ -43,10 +43,10 @@ En el **Tab Privileges**, se deberán habilitar las opciones: ***Can login, Crea
 
 ## 5. Clonación del Repositorio de Odoo 15.0 
 
-Se deberá crear un directorio (carpeta), para clonar el repositorio de Odoo, una vez seleccionada la [**versión 15.0 de Oddo**](https://github.com/odoo/odoo/tree/15.0), procedemos a ejecutar el comando de clonación, en el directorio creado anteriormente
+Se deberá crear un directorio (carpeta), para clonar el repositorio de Odoo, una vez seleccionada la [**versión 15.0 de Oddo**](https://github.com/odoo/odoo/tree/15.0), procedemos a ejecutar el siguiente comando, en el directorio creado anteriormente
 
 ```
-$ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
+git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
 **Donde:**
 
@@ -56,20 +56,17 @@ La **expresión**: ***https://github.com/odoo/odoo.git***, corresponde al comand
 
 La **expresión**: ***--depth=1 -b 15.0***, corresponde a la última versión de Odoo 15.0
 
-Una vez clonado el repositorio de Odoo 15.0, se deberá ingresar en la carpeta creada, llamada odoo y se ejecutará el siguiente comando:
+Una vez clonado el repositorio de Odoo 15.0, se deberá ingresar en la carpeta creada, para este caso será llamada **odoo** y se ejecutará el siguiente comando:
 
 ```
-C:\odoo\odoo>pip install setuptools wheel
+pip install setuptools wheel
 ```
-
 A continuación, en el directorio de clonación se deberá de editar el archivo : ***requeriments.txt***, de la siguiente manera:
 
-```
-python-stdnum==1.16
-libsass==0.21.0
-passlib==1.7.2
-cryptography==3.4.8
-```
+**libsass==0.21.0**
+**cryptography==3.4.8**
+**passlib==1.7.2**
+**python-stdnum==1.16**
 
 ## 6. Instalación de ***venv*** Python (Entorno Virtual de Python) 
 
