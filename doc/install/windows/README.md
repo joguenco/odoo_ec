@@ -50,8 +50,7 @@ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0
 ```
 **Donde:**
 
-La expresión: $ ***git clone***, es propia del comando de clonación, la expresión: ***https://github.com/odoo/odoo.git***, corresponde al comando de clonación de Odoo y las   
-expresiones: ***--depth=1 -b 15.0***, corresponden a la última versión de Odoo 15.0. Una vez clonado el repositorio de Odoo 15.0, se deberá ingresar en la carpeta creada, para este caso será llamada **odoo** y se ejecutará el siguiente comando:
+La expresión: $ ***git clone***, es propia del comando de clonación, la expresión: ***https://github.com/odoo/odoo.git***, corresponde al comando de clonación de Odoo y las expresiones: ***--depth=1 -b 15.0***, corresponden a la última versión de Odoo 15.0. Una vez clonado el repositorio de Odoo 15.0, se deberá ingresar en la carpeta creada, para este caso será llamada **odoo** y se ejecutará el siguiente comando:
 
 ```
 pip install setuptools wheel
