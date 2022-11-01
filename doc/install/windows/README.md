@@ -39,7 +39,7 @@ A continuación se deberá crear un Rol para gestionar la Base de Datos, para es
 
 ![img.png](images/i_post_5.png)
 
-En el **Tab Privileges**, se deberán habilitar las opciones: ***Can login, Create databases y Inherit rights from the parent roles***
+En el **Tab Privileges**, se deberán habilitar las opciones: ***Can login, Create databases*** y ***Inherit rights from the parent roles***
 
 ![img.png](images/i_post_7.png)
 
