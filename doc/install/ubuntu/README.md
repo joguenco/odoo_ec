@@ -27,7 +27,10 @@ Use this command only in first time for create the database, the parameters are:
 ```
 odoo -d odoo15 -r odoo15 -w o --stop-after-init
 ```
-To initialize a database without demonstration data, add the **--without-demo=all** option to the odoo command.
+or without demonstration data
+```
+odoo -d odoo15 -r odoo15 -w o --without-demo=all --stop-after-init
+```
 ### Configuring the Odoo server options
 * To see all the available options
 ```
