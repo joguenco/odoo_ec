@@ -43,11 +43,8 @@ En el **Tab Privileges**, se deberán habilitar las opciones: ***Can login, Crea
 
 ## 5. Clonación del Repositorio de Odoo 15.0 
 
-Se deberá crear un directorio (carpeta), en la ubicación que el usuario a bien tuviere hacerlo, para clonar el repositorio de Odoo
+Se deberá crear un directorio (carpeta), para clonar el repositorio de Odoo, una vez seleccionada la [**versión 15.0 de Oddo**](https://github.com/odoo/odoo/tree/15.0), procedemos a ejecutar el comando de clonación, en el directorio creado anteriormente
 
-Una vez seleccionada la versión 15.0 de Oddo [>](https://github.com/odoo/odoo), procedemos a copiar el comando de clonación
-
-Ejecutaremos el siguiente comando :
 ```
 $ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
