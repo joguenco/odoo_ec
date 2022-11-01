@@ -89,10 +89,10 @@ Para habilitar el ***entorno virtual***, se deberá ejecutar el siguiente comand
 ```
 Si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, tendrá el siguiente aspecto: **(venv)PS C:\Users\admin\Projects\odoo>**
 
-**Para la instalación de todos los requerimientos de la instancia de odoo en la computadora local, se ejecutará el siguiente comando:**
+**Para la instalación de todas las dependencias del proyecto, se ejecutará el siguiente comando:**
 
 ```
-(venv)PS C:\Users\admin\Projects\odoo> pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## 7. Ejecución de Odoo 15.0
@@ -100,7 +100,7 @@ Si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, 
 Se abrirá un terminal y se ejecutará el siguiente comando:
 
 ```
-(venv)PS C:\Users\admin\Projects\odoo> python odoo-bin -d odoo15 -r graham -w mypassword
+python odoo-bin -d odoo15 -r Juan -w mi_password
 ```
 
 El **parametro: -d odoo15** es la conexión del servidor creada en la Sección 4. Instalación de PostgreSQL 13.4 
