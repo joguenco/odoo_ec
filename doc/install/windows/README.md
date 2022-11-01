@@ -13,9 +13,10 @@
 ## 1. Instalación de Python
 
 La ruta del path se debería encontrarse en las siguientes rutas:
-```
-C:\Users\......\AppData\Local\Programs\Python\Python38  |   C:\Users\......\AppData\Local\Programs\Python\Python38\Scripts 
-```
+
+***C:\Users\......\AppData\Local\Programs\Python\Python38***
+***C:\Users\......\AppData\Local\Programs\Python\Python38\Scripts*** 
+
 **La actualización del pip es opcional** 
 ```
 python -m pip install --upgrade pip 
