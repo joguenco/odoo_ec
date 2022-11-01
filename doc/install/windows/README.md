@@ -61,7 +61,7 @@ python-stdnum==**1.16** <br>
 
 ## 6. Instalación de ***venv*** Python (Entorno Virtual de Python) 
 
-***Únicamente*** en el caso, que no se ejecutacen los comandos de Python en las carpetas de Windows, se deberán utilizar los siguientes comandos, en una terminal con permisos de **Administrador**, en la
+***Únicamente*** en el caso, que no se ejecutacen los comandos de Python, se deberán utilizar los siguientes comandos, en una terminal con permisos de **Administrador**
 ```
 Get-ExecutionPolicy
 ```
@@ -71,18 +71,16 @@ Get-ExecutionPolicy -List
 ```
 Set-ExecutionPolicy  -ExecutionPolicy AllSigned
 ```
-Una vez superados los pasos anteriores se deberá ejecutar el siguiente comando en la ruta (Ejemplo):**C:\Users\admin>**
+Una vez superados los pasos anteriores se deberá ejecutar el siguiente comando en la ruta (Ejemplo): **C:\Users\admin>**
 ```
 pip install virtualenv
 ```
-**Para crear los Scripts del proyecto se deberá ejecutar el siguiente comando en la ruta (Ejemplo):** 
+Para crear los Scripts del proyecto se deberá ejecutar el siguiente comando en la ruta (Ejemplo): **C:\Users\admin\Projects\odoo>** 
 ```
-C:\Users\admin\Projects\odoo>python -m venv ./venv
+python -m venv ./venv
 ```
-Una vez ejecutado el comando anterior se deberían crear los siguientes directorios 
-```
-C:\Users\admin\Projects\odoo\venv\Scripts
-```
+Una vez ejecutado el comando anterior se deberían crear el siguiente directorio **C:\Users\admin\Projects\odoo\venv\Scripts**
+
 Para habilitar el ***entorno virtual*** de Python, se deberá ejecutar el siguiente comando en un ***terminal con privilegios de Administrador***, en  la ruta (Ejemplo):
 ```
 C:\Users\admin\Projects\odoo> .\venv\Scripts\activate
