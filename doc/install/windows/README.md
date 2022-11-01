@@ -27,7 +27,7 @@ Una vez descargada la versión [**VS Build Tools 3.8.10**](https://visualstudio.
 
 ## 3. Instalación de herramientas de línea de comandos
 
-Se deberán instalar las herramientas de línea de comandos de código abierto [**wkhtmltopdf-0.12.5-1**](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5), destinadas a la conversión de HTML a PDF, con la  utilización del motor de renderizado **Qt WebKit**. 
+Se deberán instalar las herramientas de línea de comandos de código abierto [**wkhtmltopdf-0.12.5-1**](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5), destinadas a la conversión de HTML a PDF 
 
 ## 4. Instalación de PostgreSQL
 
