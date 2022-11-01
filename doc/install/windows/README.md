@@ -53,7 +53,7 @@ Ejecutaremos el siguiente comando :
 ```
 $ git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
-Donde:
+**Donde:**
 
 La **expresión**: $ ***git clone***, es propia del comando de clonación  
 
