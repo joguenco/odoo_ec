@@ -1,6 +1,6 @@
 ## Manual de Instalación de Odoo 15.0 en Windows 11
 
-## Requerimientos 
+## Requerimientos   
 
  - Python **3.8.10**        
  - VS Build Tools **16.11.4** 
