@@ -27,9 +27,7 @@ Una vez descargada la versión ***VS Build Tools 3.8.10*** [>](https://visualstu
 
 ## 3. Instalación de herramientas de línea de comandos
 
-Descargadas las herramientas de línea de comandos de código abierto ***wkhtmltopdf*** para la conversión de HTML a PDF y formatos de imagen utilizando el motor de renderizado **Qt WebKit**, deberán ser instaladas. 
-
-La versión se encuentra citada en los requerimientos: ***wkhtmltox-0.12.5-1.msvc2015-win64.exe[>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)***  
+Descargadas las herramientas de línea de comandos de código abierto ***wkhtmltopdf-0.12.5-1 [>](https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.5)*** para la conversión de HTML a PDF y formatos de imagen utilizando el motor de renderizado **Qt WebKit**, deberán ser instaladas. 
 
 ## 4. Instalación de Git  
 
