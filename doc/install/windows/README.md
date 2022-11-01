@@ -46,8 +46,7 @@ Una vez seleccionada la [**versión 15.0 de Oddo**](https://github.com/odoo/odoo
 ```
 git clone https://github.com/odoo/odoo.git --depth=1 -b 15.0 
 ```
-Las expresiones: ***--depth=1 -b 15.0***, corresponden a la última versión de Odoo 15.0 y procederemos a ejecutar el siguiente comando: 
-
+Las expresiones: ***--depth=1 -b 15.0***, corresponden a la última versión de Odoo 15.0, a continuación se deberá ejecutar el siguiente comando:
 ```
 pip install setuptools wheel
 ```
