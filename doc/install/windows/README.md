@@ -60,8 +60,11 @@ pip install setuptools wheel
 A continuación, en el directorio de clonación se deberá de editar el archivo : ***requeriments.txt***, de la siguiente manera:
 
 **libsass==0.21.0** 
-**cryptography==3.4.8** 
-**passlib==1.7.2**  
+
+**cryptography==3.4.8**
+
+**passlib==1.7.2**
+
 **python-stdnum==1.16**
 
 ## 6. Instalación de ***venv*** Python (Entorno Virtual de Python) 
