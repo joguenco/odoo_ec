@@ -120,10 +120,10 @@ Para acceder a las reglas de acceso del modelo, podemos navegar en la aplicació
 Estos permisos de acceso pueden ser proporcionados por el archivo: [**security/ir.model.access.csv**](../docs/ch03/library_app/security/ir.model.access.csv).
 En el archivo **__manifest__.py**, se debería agregar la siguiente línea de código: **security/ir.model.access.csv**.
 ```
-    'data': [
-        'security/library_security.xml',
-        'security/ir.model.access.csv',
-        'views/library_menu.xml',
+    "data": [
+        "security/library_security.xml",
+        "security/ir.model.access.csv",
+        "views/library_menu.xml",
     ],
 ```
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
@@ -132,7 +132,7 @@ python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Reglas de acceso a nivel de fila**
 
-En el archivo: **security/library-security.xml**, sección <data> antes de el tag </odoo>, se deben agregar las siguientes líneas de código:
+En el archivo: **security/library-security.xml**, sección **data** antes de el tag **<</odoo>>**, se deben agregar las siguientes líneas de código:
 ```
 <odoo>
   ...
