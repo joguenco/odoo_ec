@@ -106,6 +106,12 @@ El parámetro: **-r Juan** es el nombre del Rol, asignado en la **Sección 4. In
 
 El parámetro: **-w mi_password** es el password del Rol, asignado en la **Sección 4. Instalación de PostgreSQL**
 
+En el caso, de iniciar Odoo sin datos demostrativos (**datos de prueba**), se debería ejecutar el siguiente comando
+
+```
+python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after-init
+```
+
 Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y utilizar la siguiente URL:
 ```
 http://localhost:8069
