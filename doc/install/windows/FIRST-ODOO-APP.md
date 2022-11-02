@@ -59,7 +59,7 @@ python odoo-bin -c odoo.conf (-d nombre_bd) -u library_module
 ```
 La expresión encerrada entre parentesis es opcional, selecciona la base de datos
 
-## 5. Creando una nueva Aplicación
+## 5. Creando una nueva aplicación
 
 **Agregar un Item al menu principal**
 
