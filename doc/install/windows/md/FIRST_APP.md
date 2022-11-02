@@ -73,28 +73,10 @@ La instrucción **"security/library_security.xml",** siempre deberá estar antes
 
 ## 6. Agregar Test Automatizados
 
-Se debe agregar en el directorio **/tests** el archivo [**tests/__init__.py**](../docs/ch03/library_app/tests/__init__.py), con el siguiente código: **from . import test_book**
-<br>
-En el directorio **/tests**, se debe agregar el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py). Las funciones **test** deberán iniciar con la siguiente expresión: **test_**
+&#9655; Se debe agregar en el directorio **/tests** el archivo [**tests/__init__.py**](../docs/ch03/library_app/tests/__init__.py), con el siguiente código: **from . import test_book**
 
-```
-from odoo.tests.common import TransactionCase
+&#9655; En el directorio **/tests**, se debe agregar el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py). Las funciones **test** deberán iniciar con la siguiente expresión: **test_**
 
-class TestBook(TransactionCase):
-
-    def setUp(self, *args, **kwargs):
-        super().setUp(*args, **kwargs)
-        self.Book = self.env["library.book"]
-        self.book1 = self.Book.create({
-            "name": "Odoo Development Essentials",
-            "isbn": "879-1-78439-279-6"})
-
-    def test_book_create(self):
-        "New Books are active by default"
-        self.assertEqual(
-            self.book1.active, True
-        )
-```
 **Arrancando los tests**
 
 Con el siguiente comando se arrancan los test: 
