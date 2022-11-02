@@ -29,7 +29,7 @@ En el archivo **./odoo.conf**, se pueden configurar los niveles de información 
 
 ## 4. Creación de un nuevo módulo addons
 
-El path de la ubicación de los **addons**, se encuentra generalmente en la siguiente ruta:  **C:\Projects\odoo\addons** y el **directorio nuevo** **custom-addons**, debe residir en el directorio **C:\Projects\odoo\custom-addons**<br>
+El path de la ubicación de los **addons**, se encuentra generalmente en la siguiente ruta:  **C:\Projects\odoo\addons** y el **directorio nuevo** **custom-addons**, debe residir en la ruta **C:\Projects\odoo\custom-addons**<br>
 
 **Comando para añadir un addons-path**   
 ```
