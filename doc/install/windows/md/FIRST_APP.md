@@ -61,9 +61,7 @@ En el directorio **/views** se crea el archivo: [***library_menu.xml***](../docs
 
 En el archivo: [***__manifest__.py***](../docs/ch03/library_app/__manifest__.py), en la sección **data:[ ]** se deberá agregar el siguiente código:
 
-'data': [
-    'views/library_menu.xml',
-],
+**"data": ["views/library_menu.xml",],**
 
 **Agregar Grupos de Seguridad**
 
