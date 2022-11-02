@@ -69,7 +69,7 @@ En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agr
 
 > El archivo [**__manifest.py__**](../docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
 
-La instrucción **"security/library_security.xml",**, siempre deberá estar antes de **"views/library_menu.xml",** 
+La instrucción **"security/library_security.xml",** siempre deberá estar antes de **"views/library_menu.xml",** 
 
 ## 6. Agregar Test Automatizados
 
