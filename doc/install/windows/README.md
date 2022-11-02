@@ -97,14 +97,10 @@ Se abrirá un terminal y se ejecutará el siguiente comando:
 ```
 python odoo-bin -d odoo15 -r Juan -w mi_password
 ```
+El parámetro: **-d odoo15**, representa la base de datos creada en **PostgreSQL**, la expresión: **-r Juan**, cita el nombre del Rol y el elemento: **-w mi_password**, define el password otorgado al Rol, todos detallados en la **Sección 4. Instalación de PostgreSQL**
 
-El parámetro: **-d odoo15** es la conexión del servidor creada en la **Sección 4. Instalación de PostgreSQL**
 
-El parámetro: **-r Juan** es el nombre del Rol, asignado en la **Sección 4. Instalación de PostgreSQL**
-
-El parámetro: **-w mi_password** es el password del Rol, asignado en la **Sección 4. Instalación de PostgreSQL**
-
-En el caso, de iniciar Odoo sin datos demostrativos (**datos de prueba**), se debería ejecutar el siguiente comando
+En el caso, de iniciar Odoo sin datos demostrativos (**datos de prueba**), se debería ejecutar el siguiente comando:
 
 ```
 python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after-init
