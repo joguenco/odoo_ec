@@ -63,13 +63,11 @@ En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agr
 <br> <br>
 **Agregar Grupos de Seguridad**
 
+&#9655; En el archivo **__manifest__.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../docs/ch03/library_app/__manifest__.py)
 
- &#9658;
-&#25B7; En el archivo **__manifest__.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../docs/ch03/library_app/__manifest__.py)
+&#9655; Se deberá crear el archivo: [**/security/library_security.xml**](../docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
 
-Se deberá crear el archivo: [**/security/library_security.xml**](../docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
-
-El archivo [**__manifest.py__**](../docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
+&#9655; El archivo [**__manifest.py__**](../docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
 
 La instrucción **"security/library_security.xml",** siempre deberá estar antes de **"views/library_menu.xml",** 
 
