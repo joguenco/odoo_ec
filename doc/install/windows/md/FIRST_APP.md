@@ -63,14 +63,12 @@ En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agr
 <br> <br>
 **Agregar Grupos de Seguridad**
 
-En el archivo **__manifest__.py** se deberá agregar la categoría :
-```
-"category": "Services/library"
-```
+En el archivo **__manifest__.py** se deberá agregar la categoría :  [**"category": "Services/library"**](../docs/ch03/library_app/__manifest__.py)
+
 Una vez asignado el ID XML **(Services/library)**, al módulo categoría **(category)**, se genera automaticamente el prefijo del nombre de la categoría, para este caso tendríamos:
-```
-base.module_category_services_library  ("category": "Services/library")
-```
+<br>
+**base.module_category_services_library  ("category": "Services/library")**
+
 Se deberá crear el archivo: **/security/library_security.xml**, y agregar el siguiente contenido:
 ```
 <odoo>
