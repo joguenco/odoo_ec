@@ -47,7 +47,7 @@ python odoo-bin scaffold mi_modulo ./custom-addons
 ```
 python odoo-bin -c odoo.conf -i mi_modulo
 ```
-Con la opción **-i**, se pueden instalar varios módulos separados por una coma **,**
+Con la opción **-i**, se pueden instalar varios módulos separados por una **coma ,**
 
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
