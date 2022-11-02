@@ -107,23 +107,8 @@ En el archivo [**__init__.py**](../docs/ch03/library_app/__init__.py) del **root
 Se deberá crear el archivo [**models/__init__.py**](../docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
 
 Se crea el archivo [**models/library_book.py**](../docs/ch03/library_app/models/library_book.py)
-```
-from odoo import fields, models
 
-class Book(models.Model):
-    _name = "library.book"
-    _description = "Book"
-
-    name = fields.Char("Title", required=True)
-    isbn = fields.Char("ISBN")
-    active = fields.Boolean("Active?", default=True)
-    date_published = fields.Date()
-    image = fields.Binary("Cover")
-    publisher_id = fields.Many2one("res.partner", string="Publisher")
-    author_ids = fields.Many2many("res.partner", string="Authors")
-```
 Ahora para ejecutar los cambios, se debe efectuar la **actualización** del módulo **library_module**, con el siguiente comando:   
-
 ```
 python odoo-bin -c odoo.conf -u library_module
 ```
