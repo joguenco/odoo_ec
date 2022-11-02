@@ -78,54 +78,24 @@ La instrucción **"security/library_security.xml",** siempre deberá estar antes
 &#9655; En el directorio **/tests**, se debe agregar el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py). Las funciones **test** deberán iniciar con la siguiente expresión: **test_**
 
 **Arrancando los tests**
-
-Con el siguiente comando se arrancan los test: 
 ```
 python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Probando (Testing) la lógica del negocio**
 
-En el archivo **tests/test_book.py**, agregaremos las siguientes líneas de código, después de **test_book_create()**
+En el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py), agregaremos las siguientes líneas de código, después de **test_book_create()**
 
-```
-    def test_check_isbn(self):
-        "Check valid ISBN"
-        self.assertTrue(self.book1._check_isbn)
-```
+def test_check_isbn(self):
+ "Check valid ISBN"
+ self.assertTrue(self.book1._check_isbn)
+
 **Probando (Testing) la seguridad de acceso**
 
 Se debe agregar dos líneas en la función **def setUp(self,*args,**kwargs)**, la primera busca el registro del usuario **admin** usando XML ID, la segunda línea modifica el ambiente utilizado para arrancar el test **self.env**,cambiando del **usuario activo** al **usuario administrador** 
 
-```
 user_admin = self.env.ref("base.user_admin")
 self.env = self.env(user=user_admin)
-```
-Finalmente el código, quedaría de la siguiente manera:
 
-```
-from odoo.tests.common import TransactionCase
-
-class TestBook(TransactionCase):
-
-    def setUp(self, *args, **kwargs):
-        super().setUp(*args, **kwargs)
-        user_admin = self.env.ref("base.user_admin")
-        self.env = self.env(user=user_admin)
-        self.Book = self.env["library.book"]
-        self.book1 = self.Book.create({
-            "name": "Odoo Development Essentials",
-            "isbn": "879-1-78439-279-6"})
-
-    def test_book_create(self):
-        "New Books are active by default"
-        self.assertEqual(
-            self.book1.active, True
-        )
-
-    def test_check_isbn(self):
-        "Check valid ISBN"
-        self.assertTrue(self.book1._check_isbn)
-```
 
 ## 7. Implementando la capa del modelo
 
