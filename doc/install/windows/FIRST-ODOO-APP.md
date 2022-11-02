@@ -25,7 +25,7 @@ Los niveles de información pueden tener los siguientes tipos: **warn/error/crit
 **log_db_level**= warning <br>
 **log_hanler**=:INFO <br>
 **log_level**= info   warn/error/critical <br>
-**logfile**= ./mylog.log <br>  
+**logfile**= **./mylog.log** <br>  
 
 ## 4. Creación de un nuevo módulo addons
 
@@ -33,9 +33,7 @@ El path de la ubicación de los **addons**, se encuentra generalmente dentro de 
 
 **C:\Projects\odoo\addons**
 
-El directorio o carpeta del nuevo **custom-addons**, debe residir dentro de la carpeta **odoo** <br>
-
-**C:\Projects\odoo\custom-addons**<br>
+El directorio o carpeta del nuevo **custom-addons**, debe residir dentro de la carpeta **odoo**  **C:\Projects\odoo\custom-addons**<br>
 
 **Comando para añadir un addons-path**   
 ```
