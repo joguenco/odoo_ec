@@ -29,9 +29,7 @@ Los niveles de información pueden tener los siguientes tipos: **warn/error/crit
 
 ## 4. Creación de un nuevo módulo addons
 
-El path de la ubicación de los **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:<br>
-
-**C:\Projects\odoo\addons**
+El path de la ubicación de los **addons**, se encuentra generalmente en la siguiente ruta:**C:\Projects\odoo\addons**
 
 El directorio o carpeta del nuevo **custom-addons**, debe residir dentro de la carpeta **odoo**:  **C:\Projects\odoo\custom-addons**<br>
 
