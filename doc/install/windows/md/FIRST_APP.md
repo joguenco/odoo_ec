@@ -5,7 +5,7 @@ El comando de arranque de Odoo puede ser ejecutado de la siguiente manera:
 ```
 python odoo-bin -c ./odoo.conf --save --stop 
 ``` 
-Donde el archivo **./odoo.conf**, contiene las configuraciones de arranque del servidor.  Los parámetros: **dbname**, **dbuser** y **dbpassword** pueden ser editados de la siguiente manera: <br>
+Donde el archivo **./odoo.conf**, contiene las configuraciones de arranque del servidor, todos los parámetros podrian ser editados: <br>
 
  **dbname**= odoo15 <br>
  **dbpassword**= mi_password <br>
@@ -19,7 +19,7 @@ python odoo-bin -c ./odoo.conf --http-port=8081
 ```
 ## 3. Gestión de los mensajes Log del Servidor 
 
-Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**. En el archivo **./odoo.conf**, se pueden configurar los siguientes parámetros: <br>
+En el archivo **./odoo.conf**, se pueden configurar los niveles de información : **warn/error/critical**.  <br>
 
 **log_db**= False  <br>
 **log_db_level**= warning <br>
