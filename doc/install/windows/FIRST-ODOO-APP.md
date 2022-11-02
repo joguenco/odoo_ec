@@ -55,7 +55,7 @@ python odoo-bin -c odoo.conf -u mi_modulo
 
 **Agregar un Item al menu principal**
 
-Comando para añadir una base de datos, sin datos demostrativos (**datos de prueba**)     
+En el caso, de iniciar Odoo sin datos demostrativos (**datos de prueba**), se debería ejecutar el siguiente comando:     
 ```
 python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after-init
 ```
