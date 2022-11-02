@@ -39,11 +39,11 @@ python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.co
 ```
 Con la utilización de este comando, generalmente suelen borrarse los **paths** del archivo **./odoo.conf**, por lo que es recomendable agregar la nueva ruta **addons**, editando el archivo **./odoo.conf**    
 
-Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando  **scaffold**   
+**Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando**  **scaffold**   
 ```
 python odoo-bin scaffold mi_modulo ./custom-addons
 ```
-Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:
+**Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:**
 ```
 python odoo-bin -c odoo.conf -i mi_modulo
 ```
