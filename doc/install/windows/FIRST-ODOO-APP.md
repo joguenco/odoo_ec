@@ -5,12 +5,12 @@ El comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
 python odoo-bin -c ./odoo.conf --save --stop 
 ``` 
-Donde el archivo ./odoo.conf, contiene las configuraciones de arranque del servidor.  Los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
-```
- dbname= odoo15
- dbpassword= ***
- dbuser= juan
-```
+Donde el archivo **./odoo.conf**, contiene las configuraciones de arranque del servidor.  Los parámetros: **dbname**, **dbuser** y **dbpassword** pueden ser editados de la siguiente manera: <br>
+
+ **dbname**= odoo15 <br>
+ **dbpassword**= mi_password <br>
+ **dbuser**= Juan <br>
+
 ## 2. Comando de Odoo con un archivo .conf y el puerto http 
 
 El comando de Odoo puede ser ejecutado con el puerto de la dirección http:
