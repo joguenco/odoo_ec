@@ -19,9 +19,7 @@ python odoo-bin -c ./odoo.conf --http-port=8081
 ```
 ## 3. Gestión de los mensajes Log del Servidor 
 
-Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**
-
-En el archivo **./odoo.conf**, se pueden configurar los siguientes parámetros: <br>
+Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**. En el archivo **./odoo.conf**, se pueden configurar los siguientes parámetros: <br>
 
 **log_db**= False  <br>
 **log_db_level**= warning <br>
