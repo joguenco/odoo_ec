@@ -3,7 +3,7 @@
 ## 1. Comando de ejecución de Odoo con un archivo .conf 
 El comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
-(venv) C:\odoo\odoo> python odoo-bin -c ./myfile.conf --save --stop 
+python odoo-bin -c ./myfile.conf --save --stop 
 ``` 
 Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor.  Los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
 ```
@@ -15,7 +15,7 @@ Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del ser
 
 El comando de Odoo puede ser ejecutado con el puerto de la dirección http:
 ```
-(venv) C:\odoo\odoo> python odoo-bin -c ./myfile.conf --http-port=8081 
+python odoo-bin -c ./myfile.conf --http-port=8081 
 ```
 ## 3. Gestión de los mensajes Log del Servidor 
 
@@ -31,35 +31,35 @@ logfile= ./mylog.log
 ```
 ## 4. Creación de un nuevo módulo addons
 
-El path de la ubicación **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:
-```
-C:\Projects\odoo\addons
-```
-El directorio o carpeta del nuevo **custom-addons**, debe residir dentro de la carpeta **odoo** 
-```
-C:\Projects\odoo\custom-addons
-```
+El path de la ubicación **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:<br>
+
+**C:\Projects\odoo\addons**
+
+El directorio o carpeta del nuevo **custom-addons**, debe residir dentro de la carpeta **odoo** <br>
+
+**C:\Projects\odoo\custom-addons**<br>
+
 Comando para añadir un **addons-path**   
 ```
-(venv) C:\Projects\odoo> python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
+python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
 ```
 Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando  **scaffold**   
 ```
-(venv) C:\Projects\odoo> python odoo-bin scaffold mi_modulo ./custom-addons
+python odoo-bin scaffold mi_modulo ./custom-addons
 ```
 Comando para añadir una base de datos, sin datos demostrativos (**datos de prueba**)     
 ```
-(venv) C:\Projects\odoo> python odoo-bin -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
+python odoo-bin -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
 ```
 Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:
 ```
-(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf (-d nombre_bd) -i library_module
+python odoo-bin -c odoo.conf (-d nombre_bd) -i library_module
 ```
 La expresión encerrada entre parentesis del comando anterior es opcional, únicamente selecciona la base de datos. Con la opción **-i**, se pueden instalar varios módulos separados por una coma **,**
 
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
-(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf (-d nombre_bd) -u library_module
+python odoo-bin -c odoo.conf (-d nombre_bd) -u library_module
 ```
 La expresión encerrada entre parentesis es opcional, selecciona la base de datos
 
@@ -164,7 +164,7 @@ class TestBook(TransactionCase):
 
 Con el siguiente comando se arrancan los test: 
 ```
-(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf -u library_module --test-enable
+python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Probando (Testing) la lógica del negocio**
 
@@ -242,7 +242,7 @@ class Book(models.Model):
 Ahora para ejecutar los cambios, se debe efectuar la **actualización** del módulo **library_module**, con el siguiente comando:   
 
 ```
-(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf -u library_module
+python odoo-bin -c odoo.conf -u library_module
 ```
 ## 8. Configurando la seguridad de acceso
 
@@ -270,7 +270,7 @@ En el archivo **__manifest__.py**, se debería agregar la siguiente línea de c�
 ```
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
-(venv) C:\Projects\odoo> python odoo-bin -c odoo.conf -u library_module --test-enable
+python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Reglas de acceso a nivel de fila**
 
@@ -463,7 +463,7 @@ En el archivo **views/book_view.xml**, se agregan los elementos **<header>** y *
 ```
 **Agregar Boton de Acción**
 
-En el archivo **views/book_view.xml**,citado anteriormente, se agregará el siguiente código, en el elemento **<header>** 
+En el archivo **views/book_view.xml**, citado anteriormente, se agregará el siguiente código, en el elemento **<header>** 
 
 ```
 <header>
@@ -596,7 +596,7 @@ Finalmente el código del archivo **views/book_view.xml**, quedaría de la sigui
 
 **Agregar la lógica en la capa del negocio**
 
-Ahora el archivo **models/library_book.py**, quedaría de la siguiente manera, agregando el **Validador de errores:**
+Ahora el archivo **models/library_book.py**, agregando el **Validador de errores** quedaría de la siguiente manera: 
 
 ```
 from odoo import fields, models
