@@ -52,7 +52,7 @@ python-stdnum==**1.16** <br>
 
 ## 6. Instalación de ***venv*** Python (Entorno Virtual de Python) 
 
-***Únicamente*** en el caso, que no se ejecutacen los comandos de Python, se deberá utilizar la **información adjunta**, en una terminal con permisos de **Administrador**
+***Únicamente*** en el caso, que no se ejecutacen los comandos de Python, se deberá utilizar la [**información adjunta**](./VENV_PYTHON.md), en una terminal con permisos de **Administrador**
 ```
 Get-ExecutionPolicy
 ```
