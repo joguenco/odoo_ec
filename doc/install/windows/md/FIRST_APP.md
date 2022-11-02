@@ -59,13 +59,6 @@ python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after
 ```
 En el directorio **/views** se crea el archivo: [**library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml), el elemento **<menuitem>**, es una instrucción para escribir un registro en el modelo:**ir.ui.menu**:
 
-
-```
-<odoo>
-    <!-- Library App Menu -->
-    <menuitem id="menu_library" name="Library" />
-</odoo>
-```
 En el archivo: __manifest__.py, se deberá agregar el siguiente código:
 ```
 "data": [
