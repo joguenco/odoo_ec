@@ -57,9 +57,9 @@ En el caso, de iniciar Odoo sin datos demostrativos (**datos de prueba**), se de
 ```
 python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after-init
 ```
-En el directorio **/views** se crea el archivo: [***library_menu.xml***](../docs/ch03/library_app/views/library_menu.xml), el elemento **menuitem**, creará un registro en el modelo: **ir.ui.menu**:
+En el directorio **/views** se crea el archivo: [**library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml), el elemento **menuitem**, creará un registro en el modelo: **ir.ui.menu**:
 
-En el archivo: [***__manifest__.py***](../docs/ch03/library_app/__manifest__.py), en la sección **data:[ ]** se deberá agregar el siguiente código: **"data": ["views/library_menu.xml",],**
+En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py), en la sección **data:[ ]** se deberá agregar el siguiente código: **"data": ["views/library_menu.xml",],**
 
 **Agregar Grupos de Seguridad**
 
