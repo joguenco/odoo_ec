@@ -3,9 +3,9 @@
 ## 1. Comando de ejecución de Odoo con un archivo .conf 
 El comando de Odoo puede ser ejecutado de la siguiente manera:
 ```
-python odoo-bin -c ./myfile.conf --save --stop 
+python odoo-bin -c ./odoo.conf --save --stop 
 ``` 
-Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del servidor.  Los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
+Donde el archivo ./odoo.conf, contiene las configuraciones de arranque del servidor.  Los parámetros: dbname, dbuser y dbpassword pueden ser editados de la siguiente manera:
 ```
  dbname= odoo15
  dbpassword= ***
@@ -15,13 +15,13 @@ Donde el archivo ./myfile.conf, contiene las configuraciones de arranque del ser
 
 El comando de Odoo puede ser ejecutado con el puerto de la dirección http:
 ```
-python odoo-bin -c ./myfile.conf --http-port=8081 
+python odoo-bin -c ./odoo.conf --http-port=8081 
 ```
 ## 3. Gestión de los mensajes Log del Servidor 
 
 Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**
 
-En el archivo ./myfile.conf, se pueden configurar los siguientes parámetros: 
+En el archivo ./odoo.conf, se pueden configurar los siguientes parámetros: 
 ```
 log_db= False
 log_db_level= warning
@@ -47,10 +47,6 @@ Comando para añadir un módulo con sus directorios (esqueleto de directorios), 
 ```
 python odoo-bin scaffold mi_modulo ./custom-addons
 ```
-Comando para añadir una base de datos, sin datos demostrativos (**datos de prueba**)     
-```
-python odoo-bin -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
-```
 Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:
 ```
 python odoo-bin -c odoo.conf (-d nombre_bd) -i library_module
@@ -67,6 +63,10 @@ La expresión encerrada entre parentesis es opcional, selecciona la base de dato
 
 **Agregar un Item al menu principal**
 
+Comando para añadir una base de datos, sin datos demostrativos (**datos de prueba**)     
+```
+python odoo-bin -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
+```
 En el directorio **/views** se crea el archivo: library_menu.xml, el elemento **<menuitem>**, es una instrucción para escribir un registro en el modelo:**ir.ui.menu**:
 ```
 <odoo>
