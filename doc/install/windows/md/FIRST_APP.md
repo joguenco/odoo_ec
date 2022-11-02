@@ -65,47 +65,10 @@ En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agr
 
 En el archivo **__manifest__.py** se deberá agregar la sección categoría :  [**"category": "Services/library"**](../docs/ch03/library_app/__manifest__.py). Una vez asignado el ID XML **(Services/library)**, al módulo categoría **(category)**, se genera automaticamente el prefijo del nombre de la categoría: **base.module_category_services_library  ("category": "Services/library")**
 
-Se deberá crear el archivo: **/security/library_security.xml**, y agregar el siguiente contenido:
-```
-<odoo>
-  <data>
-    <!-- Library User Group -->
-    <record id="library_group_user" model="res.groups">
-        <field name="name">User</field>
-        <field name="category_id"
-           ref="base.module_category_services_library"/>
-        <field name="implied_ids"
-           eval="[(4, ref('base.group_user'))]"/>
-    </record>
-  </data>
-</odoo>
-```
-Los XML's (name, category_id y implied_ids), son agregados en un registro al modelo **res.groups**
-Se deberá editar el archivo: **/security/library_security.xml**, y agregar el siguiente contenido:
-```
-<odoo>
-  <data>
-    <!-- Library Manager Group -->
-    <record id="library_group_manager" model="res.groups">
-        <field name="name">Manager</field>
-        <field name="category_id"
-           ref="base.module_category_services_library"/>
-        <field name="implied_ids"
-           eval="[(4, ref('library_group_user'))]"/>
-        <field name="users"
-           eval="[(4, ref('base.user_root')),
-                  (4, ref('base.user_admin'))]"/>
-    </record>
-  </data>
-</odoo>
-```
-El archivo **__manifest.py__**, debería tener las siguientes instrucciones:
-```
-"data": [
-    "security/library_security.xml",
-    "views/library_menu.xml",
-],
-```
+Se deberá crear el archivo: [**/security/library_security.xml**](../docs/ch03/library_app/security/library_security.xml), los XML's (name, category_id y implied_ids), son agregados en un registro al modelo **res.groups**
+
+El archivo **__manifest.py__**, debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
+
 La instrucción **"security/library_security.xml",**, siempre deberá estar antes de **"views/library_menu.xml",** 
 
 ## 6. Agregar Test Automatizados
