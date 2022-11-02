@@ -84,11 +84,12 @@ python odoo-bin -c odoo.conf -u library_module --test-enable
 **Probando (Testing) la lógica del negocio**
 
 En el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py), agregaremos las siguientes líneas de código, después de **test_book_create()**
-
+<br>
+~~~
 def test_check_isbn(self):
  "Check valid ISBN"
  self.assertTrue(self.book1._check_isbn)
-
+~~~
 **Probando (Testing) la seguridad de acceso**
 
 Se debe agregar dos líneas en la función **def setUp(self,*args,**kwargs)**, la primera busca el registro del usuario **admin** usando XML ID, la segunda línea modifica el ambiente utilizado para arrancar el test **self.env**,cambiando del **usuario activo** al **usuario administrador** 
