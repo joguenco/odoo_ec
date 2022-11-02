@@ -30,7 +30,7 @@ Se deberán instalar las herramientas de línea de comandos de código abierto [
 
 ## 4. Instalación de PostgreSQL
 
-Una vez instalado PostgreSql, se deberán  realizar las configuraciones correspondientes citadas en la [**información adjunta**](./POSTGRESQL.md)
+Una vez instalado PostgreSql, se deberán  realizar las configuraciones correspondientes citadas en la [**información adjunta**](md/POSTGRESQL.md)
 
 
 ## 5. Clonación del Repositorio de Odoo 15.0 
@@ -52,7 +52,7 @@ python-stdnum==**1.16** <br>
 
 ## 6. Instalación de ***venv*** Python (Entorno Virtual de Python) 
 
-***Únicamente*** en el caso, que no se ejecutacen los comandos de Python, se deberá utilizar la [**información adjunta**](./VENV_PYTHON.md), y ejecutarla en un terminal con **permisos de Administrador**
+***Únicamente*** en el caso, que no se ejecutacen los comandos de Python, se deberá utilizar la [**información adjunta**](md/VENV_PYTHON.md), y ejecutarla en un terminal con **permisos de Administrador**
 
 Para la instalación de todas las **dependencias del proyecto**, se ejecutará el siguiente comando:
 ```
