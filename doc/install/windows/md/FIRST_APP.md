@@ -62,13 +62,13 @@ En el directorio **/views** se crea el archivo: [**library_menu.xml**](../docs/c
 En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agregar el siguiente código: [**"data": ["views/library_menu.xml",],**](../docs/ch03/library_app/__manifest__.py)
 <br> <br>
 **Agregar Grupos de Seguridad**
-
+***
 En el archivo **__manifest__.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../docs/ch03/library_app/__manifest__.py)
 
 Se deberá crear el archivo: [**/security/library_security.xml**](../docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
 
 El archivo [**__manifest.py__**](../docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
-
+***
 La instrucción **"security/library_security.xml",** siempre deberá estar antes de **"views/library_menu.xml",** 
 
 ## 6. Agregar Test Automatizados
