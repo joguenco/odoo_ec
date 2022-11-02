@@ -132,7 +132,7 @@ python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Reglas de acceso a nivel de fila**
 
-En el archivo: **security/library-security.xml**, sección **&#60;data&#62;** antes del tag **&#60;&#92;odoo&#62;**, se deben agregar las siguientes líneas de código:
+En el archivo: [**security/library-security.xml**](../docs/ch03/library_app/security/library_security.xml), sección **&#60;data&#62;** antes del tag **&#60;&#92;odoo&#62;**, se deben agregar algunas líneas de código:
 ```
 <odoo>
   ...
