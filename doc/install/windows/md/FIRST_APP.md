@@ -132,70 +132,12 @@ python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Reglas de acceso a nivel de fila**
 
-En el archivo: [**security/library-security.xml**](../docs/ch03/library_app/security/library_security.xml), sección **&#60;data&#62;** antes del tag **&#60;&#92;odoo&#62;**, se deben agregar algunas líneas de código:
-```
-<odoo>
-  ...
-  <data noupdate="1">
-    <record id="book_user_rule" model="ir.rule">
-      <field name="name">Library Book User Access</field>
-      <field name="model_id" ref="model_library_book"/>
-      <field name="domain_force">
-        [('active', '=', True)]
-      </field>
-      <field name="groups" eval="[(4, 
-        ref('library_group_user'))]"/>
-    </record>
-  </data>
+En el archivo: [**security/library-security.xml**](../docs/ch03/library_app/security/library_security.xml), sección **&#60;data&#62;** antes del tag **&#60;&#92;odoo&#62;**, se deben agregar algunas líneas de código
 
-</odoo>
-```
-La regla de registro está dentro de un elemento **<data noupdate="1">**, lo que significa que esos
+La regla de registro está dentro de un elemento **&#60;data noupdate="1"&#62;**, lo que significa que esos
 registros se crearán en la instalación del módulo, pero no se reescribirán en las actualizaciones del módulo.
 
-Finalmente el archivo: **security/library-security.xml**, quedaría de la siguiente manera: 
 
-```
-<odoo>
-
-  <data>
-  <!-- Library User Group -->
-  <record id="library_group_user" model="res.groups">
-    <field name="name">User</field>
-    <field name="category_id"
-           ref="base.module_category_services_library"/>
-    <field name="implied_ids"
-           eval="[(4, ref('base.group_user'))]"/>
-  </record>
-
-  <!-- Library Manager Group -->
-  <record id="library_group_manager" model="res.groups">
-    <field name="name">Manager</field>
-    <field name="category_id"
-           ref="base.module_category_services_library"/>
-    <field name="implied_ids"
-           eval="[(4, ref('library_group_user'))]"/>
-    <field name="users"
-           eval="[(4, ref('base.user_root')),
-                  (4, ref('base.user_admin'))]"/>
-  </record>
-
-  </data>
-  
-  <data noupdate="1">
-    <record id="book_user_rule" model="ir.rule">
-      <field name="name">Library Book User Access</field>
-      <field name="model_id" ref="model_library_book"/>
-      <field name="domain_force">
-        [('active', '=', True)]
-      </field>
-      <field name="groups" eval="[(4, 
-        ref('library_group_user'))]"/>
-    </record>
-  </data>
-  
-</odoo>
-```
 
 ## 9. Implementando la capa de vista de backend
 
