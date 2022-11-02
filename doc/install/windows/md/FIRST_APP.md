@@ -35,7 +35,7 @@ El path de la ubicación de los **addons**, se encuentra generalmente en la sigu
 ```
 python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
 ```
-Con la utilización de este comando, generalmente suelen borrarse los **paths** del archivo **./odoo.conf**, por lo que es recomendable agregar la nueva ruta **addons**, editando el archivo **./odoo.conf**    
+Con la utilización de este comando, generalmente suelen borrarse los **addons path** del archivo **./odoo.conf**, por lo que es recomendable agregar la nueva ruta **addons**, editando el archivo **./odoo.conf**    
 
 **Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando**  **scaffold**   
 ```
