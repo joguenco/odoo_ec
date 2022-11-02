@@ -63,6 +63,8 @@ En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agr
 <br> <br>
 **Agregar Grupos de Seguridad**
 
+
+ &#9658;
 &#25B7; En el archivo **__manifest__.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../docs/ch03/library_app/__manifest__.py)
 
 Se deberá crear el archivo: [**/security/library_security.xml**](../docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
