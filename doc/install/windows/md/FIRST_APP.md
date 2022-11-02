@@ -92,7 +92,7 @@ def test_check_isbn(self):
 ~~~
 **Probando (Testing) la seguridad de acceso**
 
-En el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py),se debe agregar dos líneas en la función **def setUp(self,*args,**kwargs)**, la primera busca el registro del usuario **admin** usando XML ID, la segunda línea modifica el ambiente utilizado para arrancar el test **self.env**,cambiando del **usuario activo** al **usuario administrador** 
+En el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py), se debe agregar dos líneas en la función **def setUp(self,*args,**kwargs)**, la primera busca el registro del usuario **admin** usando XML ID, la segunda línea modifica el ambiente utilizado para arrancar el test **self.env**,cambiando del **usuario activo** al **usuario administrador** 
 ~~~
 user_admin = self.env.ref("base.user_admin")
 self.env = self.env(user=user_admin)
