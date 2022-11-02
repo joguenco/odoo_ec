@@ -106,7 +106,7 @@ En el archivo [**__init__.py**](../docs/ch03/library_app/__init__.py) del **root
 
 Se deberá crear el archivo [**models/__init__.py**](../docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
 
-Crear el archivo **models/library_book.py**, y agregar las siguientes líneas de código:
+Se crea el archivo [**models/library_book.py**](../docs/ch03/library_app/models/library_book.py)
 ```
 from odoo import fields, models
 
