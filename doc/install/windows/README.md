@@ -88,7 +88,6 @@ Para habilitar el ***entorno virtual***, se deberá ejecutar el siguiente comand
 Si todos los pasos anteriores se realizaron satisfactoriamente el ***Prompt***, tendrá el siguiente aspecto: ***(venv)*****PS C:\Users\admin\Projects\odoo>**
 
 **Para la instalación de todas las dependencias del proyecto, se ejecutará el siguiente comando:**
-
 ```
 pip install -r requirements.txt
 ```
