@@ -67,7 +67,7 @@ En el archivo **__manifest__.py** se deberá agregar la sección categoría :  [
 
 Se deberá crear el archivo: [**/security/library_security.xml**](../docs/ch03/library_app/security/library_security.xml), los XML's (name, category_id y implied_ids), son agregados en un registro al modelo **res.groups**
 
-El archivo **__manifest.py__**, debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
+El archivo [**__manifest.py__**](../docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
 
 La instrucción **"security/library_security.xml",**, siempre deberá estar antes de **"views/library_menu.xml",** 
 
