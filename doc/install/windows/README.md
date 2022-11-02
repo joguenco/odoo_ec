@@ -50,7 +50,7 @@ Las expresiones: ***--depth=1 -b 15.0***, corresponden a la última versión de 
 ```
 pip install setuptools wheel
 ```
-A continuación, en el directorio de clonación se deberá de editar el archivo : **requeriments.txt**, de la siguiente manera: <br>
+En el directorio de clonación se deberá de editar el archivo : **requeriments.txt**, de la siguiente manera: <br>
 
 libsass==**0.21.0** <br>
 cryptography==**3.4.8** <br>
