@@ -116,9 +116,9 @@ python odoo-bin -c odoo.conf -u library_module
 
 **Seguridad en el Control de Acceso**
 
-Para acceder a las reglas de acceso del modelo, podemos navegar en la aplicación web en el apartado: **Settings|Technical|Security|Access Rights**. Se podría otorgar acceso completo al **Administrador de la Librería**, y a los **usuarios** se podrían otorgar permisos para **leer**, **escribir** y **crear** libros.
-Estos permisos de acceso pueden ser proporcionados por el archivo: [**security/ir.model.access.csv**](../docs/ch03/library_app/security/ir.model.access.csv)
-En el archivo **__manifest__.py**, se debería agregar la siguiente línea de código: **security/ir.model.access.csv**, de manera que el archivo deberá quedar de la siguiente manera:
+Para acceder a las reglas de acceso del modelo, podemos navegar en la aplicación web en el apartado: **Settings|Technical|Security|Access Rights**. Se podría otorgar acceso completo al **Administrador de la Librería**, y a los **usuarios** permisos para **leer**, **escribir** y **crear** libros.
+Estos permisos de acceso pueden ser proporcionados por el archivo: [**security/ir.model.access.csv**](../docs/ch03/library_app/security/ir.model.access.csv).
+En el archivo **__manifest__.py**, se debería agregar la siguiente línea de código: **security/ir.model.access.csv**.
 ```
     'data': [
         'security/library_security.xml',
