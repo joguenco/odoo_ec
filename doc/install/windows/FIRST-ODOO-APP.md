@@ -21,7 +21,7 @@ python odoo-bin -c ./odoo.conf --http-port=8081
 
 Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**
 
-En el archivo **odoo.conf**, se pueden configurar los siguientes parámetros: <br>
+En el archivo **./odoo.conf**, se pueden configurar los siguientes parámetros: <br>
 
 **log_db**= False  <br>
 **log_db_level**= warning <br>
@@ -31,7 +31,7 @@ En el archivo **odoo.conf**, se pueden configurar los siguientes parámetros: <b
 
 ## 4. Creación de un nuevo módulo addons
 
-El path de la ubicación **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:<br>
+El path de la ubicación de los **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:<br>
 
 **C:\Projects\odoo\addons**
 
@@ -39,7 +39,7 @@ El directorio o carpeta del nuevo **custom-addons**, debe residir dentro de la c
 
 **C:\Projects\odoo\custom-addons**<br>
 
-Comando para añadir un **addons-path**   
+**Comando para añadir un addons-path**   
 ```
 python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
 ```
@@ -51,16 +51,14 @@ python odoo-bin scaffold mi_modulo ./custom-addons
 ```
 Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:
 ```
-python odoo-bin -c odoo.conf (-d nombre_bd) -i library_module
+python odoo-bin -c odoo.conf -i mi_modulo
 ```
-La expresión encerrada entre parentesis del comando anterior es opcional, únicamente selecciona la base de datos. Con la opción **-i**, se pueden instalar varios módulos separados por una coma **,**
+Con la opción **-i**, se pueden instalar varios módulos separados por una coma **,**
 
 Para la actualización del Módulo, se deberá utilizar el siguiente comando:
 ```
-python odoo-bin -c odoo.conf (-d nombre_bd) -u library_module
+python odoo-bin -c odoo.conf -u mi_modulo
 ```
-La expresión encerrada entre parentesis es opcional, selecciona la base de datos
-
 ## 5. Creando una nueva aplicación
 
 **Agregar un Item al menu principal**
