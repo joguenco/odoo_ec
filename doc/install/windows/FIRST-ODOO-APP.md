@@ -65,7 +65,7 @@ La expresión encerrada entre parentesis es opcional, selecciona la base de dato
 
 Comando para añadir una base de datos, sin datos demostrativos (**datos de prueba**)     
 ```
-python odoo-bin -d odoo15 -r graham -w *** --without-demo=all --stop-after-init
+python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after-init
 ```
 En el directorio **/views** se crea el archivo: library_menu.xml, el elemento **<menuitem>**, es una instrucción para escribir un registro en el modelo:**ir.ui.menu**:
 ```
