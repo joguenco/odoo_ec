@@ -85,7 +85,7 @@ Para habilitar el ***entorno virtual***, se deberá ejecutar el siguiente comand
 ```
 .\venv\Scripts\activate
 ```
-**Para la instalación de todas las dependencias del proyecto, se ejecutará el siguiente comando:**
+Para la instalación de todas las **dependencias del proyecto**, se ejecutará el siguiente comando:
 ```
 pip install -r requirements.txt
 ```
