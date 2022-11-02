@@ -134,8 +134,7 @@ python odoo-bin -c odoo.conf -u library_module --test-enable
 
 En el archivo: [**security/library-security.xml**](../docs/ch03/library_app/security/library_security.xml), sección **&#60;data&#62;** antes del tag **&#60;&#92;odoo&#62;**, se deben agregar algunas líneas de código
 
-La regla de registro está dentro de un elemento **&#60;data noupdate="1"&#62;**, lo que significa que esos
-registros se crearán en la instalación del módulo, pero no se reescribirán en las actualizaciones del módulo.
+La regla de registro residente en el elemento **&#60;data noupdate="1"&#62;**, determina que estos registros se **crearán en la instalación del módulo**, pero **no se reescribirán en las actualizaciones** del módulo.
 
 
 
