@@ -13,7 +13,7 @@ Donde el archivo **./odoo.conf**, contiene las configuraciones de arranque del s
 
 ## 2. Comando de Odoo con un archivo .conf y el puerto http 
 
-El comando de arranque de Odoo puede ser ejecutado con el puerto de la dirección http:
+El comando de arranque de Odoo puede ser ejecutado con el puerto de la http:
 ```
 python odoo-bin -c ./odoo.conf --http-port=8081 
 ```
