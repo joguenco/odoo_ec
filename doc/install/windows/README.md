@@ -30,7 +30,7 @@ Se deberán instalar las herramientas de línea de comandos de código abierto [
 
 ## 4. Instalación de PostgreSQL
 
-Una vez instalado PostgreSql, se deberán  realizar las configuraciones correspondientes citadas en la [**información adjunta**](./INSTALL_POSTGRESQL.md)
+Una vez instalado PostgreSql, se deberán  realizar las configuraciones correspondientes citadas en la [**información adjunta**](./POSTGRESQL.md)
 
 
 ## 5. Clonación del Repositorio de Odoo 15.0 
