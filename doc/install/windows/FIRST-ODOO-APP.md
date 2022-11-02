@@ -21,14 +21,14 @@ python odoo-bin -c ./odoo.conf --http-port=8081
 
 Los niveles de información pueden tener los siguientes tipos: **warn/error/critical**
 
-En el archivo ./odoo.conf, se pueden configurar los siguientes parámetros: 
-```
-log_db= False
-log_db_level= warning
-log_hanler=:INFO
-log_level= info   warn/error/critical
-logfile= ./mylog.log   
-```
+En el archivo ./odoo.conf, se pueden configurar los siguientes parámetros: <br>
+
+**log_db**= False  <br>
+**log_db_level**= warning <br>
+**log_hanler**=:INFO <br>
+**log_level**= info   warn/error/critical <br>
+**logfile**= ./mylog.log <br>  
+
 ## 4. Creación de un nuevo módulo addons
 
 El path de la ubicación **addons**, se encuentra generalmente dentro de la carpeta **odoo**, tal como se muestra a continuación:<br>
@@ -43,6 +43,8 @@ Comando para añadir un **addons-path**
 ```
 python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
 ```
+Con la utilización de este comando, generalmente suelen borrarse los **paths** del archivo **./odoo.conf**, por lo que es recomendable agregar la nueva ruta **addons**, editando el archivo **./odoo.conf**    
+
 Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando  **scaffold**   
 ```
 python odoo-bin scaffold mi_modulo ./custom-addons
