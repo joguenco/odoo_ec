@@ -151,79 +151,17 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 Las **vistas** son registros de datos almacenados en la base de datos del modelo **ir.ui.view**, las cuales se almacenan con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml)
 
-En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
-
-```
-    'name': "library_module",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Esta es una descripcion extendida
-        de mi nuevo modulo
-        para aprender odoo
-    """,
-
-    'author': "Jorge Luis",
-    'website': "http://mestizos.dev",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Services/Library',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
-    'data': [
-        'security/library_security.xml',
-        'security/ir.model.access.csv',
-        'views/book_view.xml',
-        'views/library_menu.xml',
-        'views/book_list_template.xml',
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
-    'application': True
-```
 **Vistas de formulario de documentos del Negocio**
 
-En el archivo **views/book_view.xml**, se agregan los elementos **<header>** y **<sheet>**
-```
-<odoo>  
-  <form>
-    <header>
-    </header>
-    <sheet>
-      <group>
-        <field name="name" /> 
-        <field name="author_ids" widget="many2many_tags" /> 
-        <field name="publisher_id" /> 
-        <field name="date_published" /> 
-            
-        <field name="isbn" /> 
-        <field name="active" /> 
-        <field name="image" widget="image" />
-      </group>
-    </sheet>
-  </form>
-</odoo>
-```
+En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido de los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
+
 **Agregar Boton de Acción**
 
-En el archivo **views/book_view.xml**, citado anteriormente, se agregará el siguiente código, en el elemento **<header>** 
+En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **<header>** 
+<br>
+En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
 
-```
-<header>
-   <button name="verify_isbn" type="object" string="Check ISBN" />
-</header>
-```
+
 **Usando Grupos para la organización de Formularios**
 
 En el archivo **views/book_view.xml**,citado anteriormente, se organizan los elementos **<group>**
