@@ -149,15 +149,16 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 **Creación de una vista de formulario**
 
-Las **vistas** son registros de datos almacenados en la base de datos del modelo **ir.ui.view**, las cuales se almacenan con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml)
+&#9655;Las **vistas** son registros de datos almacenados en la base de datos del modelo **ir.ui.view**, las cuales se almacenan con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml)
 
 **Vistas de formulario de documentos del Negocio**
 
-En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido de los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
+&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido de los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
 
 **Agregar Boton de Acción**
 
-En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **<header>** 
+&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **<header>** 
+<br>
 <br>
 En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
 
