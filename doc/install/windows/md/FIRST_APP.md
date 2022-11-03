@@ -163,9 +163,8 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 &#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se organizan los elementos **&#60;group&#62;**
 
-<br>
 En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
-<br>
+
 
 **Agregando Listas y Vistas de busqueda**
 
@@ -203,72 +202,7 @@ El elemento **&#60;tree&#62;** deberá contener los campos que se presentarán c
     ...
   </odoo>  
 ```
-Finalmente el código del archivo **views/book_view.xml**, quedaría de la siguiente manera :
 
-```
-<odoo> 
-  <record id="view_form_book" model="ir.ui.view"> 
-    <field name="name">Book Form</field> 
-    <field name="model">library.book</field> 
-    <field name="arch" type="xml"> 
-  
-      <form string="Book">
-        <header>
-          <button name="verify_isbn" type="object"
-            string="Check ISBN" />
-        </header>
-        <sheet>
-          <group name="group_top">
-            <group name="group_left">
-              <field name="name" /> 
-              <field name="author_ids" widget="many2many_tags" /> 
-              <field name="publisher_id" /> 
-              <field name="date_published" /> 
-            </group>
-            <group name="group_right">
-              <field name="isbn" /> 
-              <field name="active" /> 
-              <field name="image" widget="image" /> 
-            </group>
-        </group>
-        </sheet>
-      </form> 
-    </field> 
-  </record>
-  
-  <record id="view_tree_book" model="ir.ui.view">
-    <field name="name">Book List</field>
-    <field name="model">library.book</field>
-    <field name="arch" type="xml">
-      <tree>
-        <field name="name"/>
-        <field name="isbn"/>
-        <field name="author_ids" widget="many2many_tags"/>
-        <field name="publisher_id"/>
-          <!--<field name="date_published"/>-->
-      </tree>
-    </field>
-  </record>
-  
-  <record id="view_search_book" model="ir.ui.view">
-    <field name="name">Book Filters</field>
-    <field name="model">library.book</field>
-    <field name="arch" type="xml">
-      <search>
-        <field name="publisher_id"/>
-        <filter name="filter_inactive"
-                string="Inactive"
-                domain="[('active','=',False)]"/>
-        <filter name="filter_active"
-                string="Active"
-                domain="[('active','=',True)]"/>
-      </search>
-    </field>
-  </record>
-  
-</odoo>
-
-```
 ## 10. Implementación de la capa lógica del negocio  
 
 **Agregar la lógica en la capa del negocio**
