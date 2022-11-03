@@ -189,9 +189,7 @@ class Books(http.Controller):
             {"books": books}
         )
 ```
-La anotación **@http.route** es importante ya que declara que el extremo de la URL está enlazado: a **/books** 
-
-El paso final es usar **http.request.render()** para procesar el **library_app**, para que la plantilla QWeb **index_template** genere el HTML de salida 
+La anotación **@http.route**, declara que el extremo de la URL está enlazado: a **/books**. La instrucción **http.request.render()** procesa el **library_app**, para que la plantilla **index_template** genere el HTML 
 
 **Agregando un QWeb Template**
 
