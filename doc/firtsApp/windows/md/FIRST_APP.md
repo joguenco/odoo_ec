@@ -1,7 +1,6 @@
 ## Mi primera aplicación con Odoo 15.0
 
-## 1. Comando de ejecución de Odoo con un archivo .conf 
-El comando de arranque de Odoo puede ser ejecutado de la siguiente manera:
+## 1. Comando de ejecución de Odoo con un archivo .conf
 ```
 python odoo-bin -c ./odoo.conf --save --stop 
 ``` 
@@ -11,9 +10,7 @@ Donde el archivo **./odoo.conf**, contiene las configuraciones de arranque del s
  **dbpassword**= mi_password <br>
  **dbuser**= Juan <br>
 
-## 2. Comando de Odoo con un archivo .conf y el puerto http 
-
-El comando de arranque de Odoo puede ser ejecutado con el puerto de la http:
+## 2. Comando de Odoo con un archivo .conf y el puerto http
 ```
 python odoo-bin -c ./odoo.conf --http-port=8081 
 ```
