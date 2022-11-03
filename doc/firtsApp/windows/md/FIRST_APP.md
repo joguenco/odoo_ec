@@ -165,7 +165,7 @@ Ahora en el archivo [**models/library_book.py**](../../../firtsApp/windows/docs/
 
 **Agregar el Controlador EndPoint**
 
-Se deberá agregar en el archivo:**library_app/__init__.py** las siguientes líneas de código:
+Se deberá agregar en el archivo: [**library_app/&#95;&#95;init&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__init__.py) las siguientes líneas de código:
 
 ```
 from . import models
