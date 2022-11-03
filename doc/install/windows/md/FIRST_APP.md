@@ -141,12 +141,11 @@ La regla de registro residente en el elemento **&#60;data noupdate="1"&#62;**, d
 
 **Agregar elementos de menú**
 
-Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml) 
-
-Este archivo de datos describe dos registros de la siguiente manera:
-
-• El elemento <record>  define una acción de ventana del lado del cliente, para abrir el Modelo Library.Book con las vistas de árbol y formulario habilitadas, en ese orden.
-• El elemento <menuitem> for Books, ejecutando la acción **action_library_book**
+Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml), este archivo de datos describe dos registros de la siguiente manera:
+<br>
+El elemento **&#60;record&#62;**  define una acción de ventana del lado del cliente, para abrir el Modelo Library.Book con las vistas de árbol y formulario habilitadas, en ese orden.
+<br>
+El elemento **&#60;menuitem&#62;** for Books, ejecutando la acción **action_library_book**
 
 **Creación de una vista de formulario**
 
