@@ -113,7 +113,7 @@ python odoo-bin -c odoo.conf -u library_module
 
 Para administrar las reglas de acceso del modelo, se podría ingresar a la aplicación web en el apartado: **Settings|Technical|Security|Access Rights**. Donde se otorgaría acceso completo al **Administrador de la Librería**, y a los **usuarios** permisos para **leer**, **escribir** y **crear** libros.
 Estos permisos de acceso pueden ser configurados en el archivo: [**security/ir.model.access.csv**](../../../firtsApp/windows/docs/ch03/library_app/security/ir.model.access.csv).
-En el archivo **&#95;&#95;manifest&#95;&#95;.py**, se debería agregar la siguiente línea de código: **security/ir.model.access.csv**.
+En el archivo **&#95;&#95;manifest&#95;&#95;.py** del **root**, se debería agregar la siguiente línea de código: **security/ir.model.access.csv**.
 ```
     "data": [
         "security/library_security.xml",
