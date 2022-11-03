@@ -135,7 +135,7 @@ En el archivo: [**security/library-security.xml**](../../../firtsApp/windows/doc
 **Agregar elementos de menú**
 
 Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/library_menu.xml), que describe la información de dos registros:
-<br>
+<br><br>
 &#9655;El elemento **&#60;record&#62;**  define una acción de ventana del lado del cliente, con las vistas de árbol y formulario habilitadas.
 <br>
 &#9655;El elemento **&#60;menuitem&#62;**, ejecuta la acción **action_library_book**
@@ -151,7 +151,7 @@ Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/c
 &#9655;**Usando Grupos para la organización de Formularios**, organizados en los elementos **&#60;group&#62;**
 
 &#9655;**Agregando Listas y Vistas de busqueda**, el elemento **&#60;tree&#62;** contiene los campos que se presentarán como columnas
-<br>
+<br> <br>
 En el archivo: [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[ ]**
 
 ## 10. Implementación de la capa lógica del negocio  
