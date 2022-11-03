@@ -171,7 +171,7 @@ Se deberá agregar en el archivo: [**library_app/&#95;&#95;init&#95;&#95;.py**](
 from . import models
 from . import controllers
 ```
-En el archivo : [**library_app/controllers/&#95;&#95;init&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/controllers/__init__.py), se deberá agregar la siguiente línea de código: ** from . import main**
+En el archivo : [**library_app/controllers/&#95;&#95;init&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/controllers/__init__.py), se deberá agregar la siguiente línea de código: **from . import main**
 
 En el archivo : [**library_app/controllers/main.py**](../../../firtsApp/windows/docs/ch03/library_app/controllers/main.py), se deberá agregar el siguiente código:
 
