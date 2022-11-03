@@ -193,9 +193,7 @@ La anotación **@http.route**, declara que el extremo de la URL está enlazado: 
 
 **Agregando un QWeb Template**
 
-La plantilla **QWeb** [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml), debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) en el apartado **data[ ]**, como un archivo XML
-
-Se deberá crear el archivo: **views/book_list_template.xml**. 
+Se deberá crear el archivo: [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml) 
 
 El elemento **template**  declara una plantilla **QWeb**. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
 
@@ -203,26 +201,8 @@ El atributo **t-foreach** se utiliza para recorrer los elementos de la variable 
 
 El atributo **t-field** se encarga de representar correctamente el contenido de un campo de registro Odoo.
 
-A continuación se deberán agregar las siguientes líneas de código:
+La plantilla **QWeb** [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml), debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) en el apartado **data[ ]**, como un archivo XML
 
-```
-<odoo>
-
-<template id="book_list_template" name="Book List">
-  <div id="wrap" class="container">
-    <h1>Books</h1>
-      <t t-foreach="books" t-as="book">
-        <div class="row">
-          <span t-field="book.name" />,
-          <span t-field="book.date_published" />,
-          <span t-field="book.publisher_id" />
-        </div>
-      </t>
-  </div>
-</template>
-
-</odoo>
-```
 
 Después de la declaración del archivo **"views/book_list_template.xml"**, en el **__manifest__.py** y realizado la actualización del módulo. 
 La página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deberían de listar los libros disponibles  
