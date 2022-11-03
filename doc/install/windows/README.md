@@ -75,7 +75,7 @@ En el caso, de iniciar Odoo sin datos demostrativos (**datos de prueba**), se de
 python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after-init
 ```
 
-Para Finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y utilizar la siguiente URL:
+Para finalizar, si los pasos anteriores se realizaron satisfactoriamente se deberá abrir un navegador web y utilizar la siguiente URL:
 ```
 http://localhost:8069
 ```
