@@ -149,9 +149,7 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 **Creación de una vista de formulario**
 
-Las Vistas son registros de datos almacenados en la base de datos en el modelo **ir.ui.view**, las cuales se almacenan con el elemento **<record>**, descrito en la vista **views/book_view.xml**
-
-Se crea el archivo **views/book_view.xml**, el cuál deberá tener el siguiente código:
+Las **vistas** son registros de datos almacenados en la base de datos del modelo **ir.ui.view**, las cuales se almacenan con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml)
 
 ```
 <odoo> 
