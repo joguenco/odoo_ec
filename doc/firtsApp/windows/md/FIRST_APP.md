@@ -134,11 +134,11 @@ En el archivo: [**security/library-security.xml**](../../../firtsApp/windows/doc
 
 **Agregar elementos de menú**
 
-Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/library_menu.xml), este archivo de datos describe dos registros de la siguiente manera:
+Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/library_menu.xml), este archivo de información describe dos registros:
 <br><br>
-&#9655;El elemento **&#60;record&#62;**  define una acción de ventana del lado del cliente, para abrir el Modelo Library.Book con las vistas de árbol y formulario habilitadas, en ese orden.
+&#9655;El elemento **&#60;record&#62;**  define una acción de ventana del lado del cliente, con las vistas de árbol y formulario habilitadas.
 <br>
-&#9655;El elemento **&#60;menuitem&#62;**, ejecutando la acción **action_library_book**
+&#9655;El elemento **&#60;menuitem&#62;**, ejecuta la acción **action_library_book**
 
 **Creación de una vista de formulario**
 
