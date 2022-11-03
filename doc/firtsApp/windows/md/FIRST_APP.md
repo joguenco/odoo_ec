@@ -72,7 +72,7 @@ La instrucción **"security/library_security.xml",** siempre deberá estar antes
 
 &#9655; Se debe agregar en el directorio **/tests** el archivo [**tests/__init__.py**](../../../firtsApp/windows/docs/ch03/library_app/tests/__init__.py), con el siguiente código: **from . import test_book**
 
-&#9655; En el directorio **/tests**, se debe agregar el archivo [**tests/test_book.py**](../../../firtsApp/windows/docs/ch03/library_app/tests/test_book.py). Las funciones **test** deberán iniciar con la siguiente expresión: **test_**
+&#9655; En el directorio **/tests**, se debe agregar el archivo [**tests/test_book.py**](../../../firtsApp/windows/docs/ch03/library_app/tests/test_book.py), las funciones **test** siempre deberán iniciar con la siguiente expresión: **test_**
 
 **Arrancando los tests**
 ```
