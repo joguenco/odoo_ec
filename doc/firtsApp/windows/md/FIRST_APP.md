@@ -150,45 +150,9 @@ Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/c
 
 &#9655;**Usando Grupos para la organización de Formularios**, organizados en los elementos **&#60;group&#62;**
 
+&#9655;**Agregando Listas y Vistas de busqueda**, el elemento **&#60;tree&#62;** contiene los campos que se presentarán como columnas
+<br>
 En el archivo: [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[ ]**
-
-
-**Agregando Listas y Vistas de busqueda**
-
-El elemento **&#60;tree&#62;** deberá contener los campos que se presentarán como columnas, nuevamente se edita el archivo **views/book_view.xml**, agregando el siguiente código antes del elemento **&#60;&#47;odoo&#62;**
-```
-  <record id="view_tree_book" model="ir.ui.view">
-    <field name="name">Book List</field>
-    <field name="model">library.book</field>
-    <field name="arch" type="xml">
-      <tree>
-        <field name="name"/>
-        <field name="isbn"/>
-        <field name="author_ids" widget="many2many_tags"/>
-        <field name="publisher_id"/>
-          <!--<field name="date_published"/>-->
-      </tree>
-    </field>
-  </record>
-  
-  <record id="view_search_book" model="ir.ui.view">
-    <field name="name">Book Filters</field>
-    <field name="model">library.book</field>
-    <field name="arch" type="xml">
-      <search>
-        <field name="publisher_id"/>
-        <filter name="filter_inactive"
-                string="Inactive"
-                domain="[('active','=',False)]"/>
-        <filter name="filter_active"
-                string="Active"
-                domain="[('active','=',True)]"/>
-      </search>
-    </field>
-    </record>
-    ...
-  </odoo>  
-```
 
 ## 10. Implementación de la capa lógica del negocio  
 
