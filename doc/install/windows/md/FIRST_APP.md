@@ -137,12 +137,11 @@ En el archivo: [**security/library-security.xml**](../docs/ch03/library_app/secu
 La regla de registro residente en el elemento **&#60;data noupdate="1"&#62;**, determina que estos registros se **crearán en la instalación del módulo**, pero **no se reescribirán en las actualizaciones** del módulo.
 
 
-
 ## 9. Implementando la capa de vista de backend
 
 **Agregar elementos de menú**
 
-El archivo **views/library_menu.xml**, deberá contener el siguiente código: 
+Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml) 
 ```
 <odoo>
 
