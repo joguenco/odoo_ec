@@ -195,9 +195,6 @@ La anotación **@http.route**, declara que el extremo de la URL está enlazado: 
 
 La plantilla **QWeb** [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml), debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) en el apartado **data[ ]**, como un archivo XML
 
-En el archivo **/__manifest__.py**, se deberá agregar la línea de código: **views/book_list_template.xml**, en el apartado **data[]**, quedando de la siguiente manera:
-
-
 Se deberá crear el archivo: **views/book_list_template.xml**. 
 
 El elemento **template**  declara una plantilla **QWeb**. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
