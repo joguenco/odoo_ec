@@ -145,7 +145,7 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 <br><br>
 &#9655;El elemento **&#60;record&#62;**  define una acción de ventana del lado del cliente, para abrir el Modelo Library.Book con las vistas de árbol y formulario habilitadas, en ese orden.
 <br>
-&#9655;El elemento **&#60;menuitem&#62;** for Books, ejecutando la acción **action_library_book**
+&#9655;El elemento **&#60;menuitem&#62;**, ejecutando la acción **action_library_book**
 
 **Creación de una vista de formulario**
 
