@@ -103,9 +103,7 @@ En el archivo [**&#95;&#95;init&#95;&#95;.py**](../../../firtsApp/windows/docs/c
 
 Se deberá crear el archivo [**models/&#95;&#95;init&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
 
-Se crea el archivo [**models/library_book.py**](../../../firtsApp/windows/docs/ch03/library_app/models/library_book.py)
-
-Ahora para ejecutar los cambios, se debe efectuar la **actualización** del módulo **library_module**, con el siguiente comando:   
+Se crea el archivo [**models/library_book.py**](../../../firtsApp/windows/docs/ch03/library_app/models/library_book.py), y se debe efectuar **actualizar** el módulo **library_module**   
 ```
 python odoo-bin -c odoo.conf -u library_module
 ```
