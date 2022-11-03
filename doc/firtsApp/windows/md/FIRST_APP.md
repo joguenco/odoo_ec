@@ -60,7 +60,7 @@ En el archivo: **&#95;&#95;manifest&#95;&#95;.py**, en la sección **data : [ ]*
 <br> <br>
 **Agregar Grupos de Seguridad**
 
-&#9655; En el archivo **__manifest__.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py)
+&#9655; En el archivo **&#95;&#95;manifest&#95;&#95;.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py)
 
 &#9655; Se deberá crear el archivo: [**/security/library_security.xml**](../../../firtsApp/windows/docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
 
