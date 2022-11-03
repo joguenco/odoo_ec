@@ -64,7 +64,7 @@ En el archivo: **&#95;&#95;manifest&#95;&#95;.py**, en la sección **data : [ ]*
 
 &#9655; Se deberá crear el archivo: [**/security/library_security.xml**](../../../firtsApp/windows/docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
 
-&#9655; El archivo [**__manifest.py__**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
+&#9655; El archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
 
 La instrucción **"security/library_security.xml",** siempre deberá estar antes de **"views/library_menu.xml",** 
 
