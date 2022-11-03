@@ -193,19 +193,17 @@ La anotación **@http.route**, declara que el extremo de la URL está enlazado: 
 
 **Agregando un QWeb Template**
 
-Se deberá crear el archivo: [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml) 
+Se crea el archivo: [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml) 
 
-El elemento **template**  declara una plantilla **QWeb**. Es un atajo para un **ir.ui.view** record, el modelo base donde se almacenan las plantillas.
+El elemento **template**  declara la existencia de una plantilla **QWeb**
 
-El atributo **t-foreach** se utiliza para recorrer los elementos de la variable **books**, disponibles para la plantilla mediante la llamada **http.request.render()** del controlador. 
+El atributo **t-foreach** se utiliza para recorrer los elementos de la variable **books**, disponibles para la plantilla **QWeb**  
 
-El atributo **t-field** se encarga de representar correctamente el contenido de un campo de registro Odoo.
+El atributo **t-field** se encarga de representar correctamente el contenido de un campo de registro de la plantilla.
 
 La plantilla **QWeb** [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml), debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) en el apartado **data[ ]**, como un archivo XML
 
-
-Después de la declaración del archivo **"views/book_list_template.xml"**, en el **__manifest__.py** y realizado la actualización del módulo. 
-La página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deberían de listar los libros disponibles  
+Una vez realizada la actualización del módulo, la página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deberían de listar los libros disponibles  
 
 ## Seguridad de Acceso
 
