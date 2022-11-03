@@ -151,28 +151,6 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 Las **vistas** son registros de datos almacenados en la base de datos del modelo **ir.ui.view**, las cuales se almacenan con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml)
 
-```
-<odoo> 
-  <record id="view_form_book" model="ir.ui.view"> 
-    <field name="name">Book Form</field> 
-    <field name="model">library.book</field> 
-    <field name="arch" type="xml"> 
-      <form string="Book">
-        <group>
-          <field name="name" /> 
-          <field name="author_ids" widget="many2many_tags" /> 
-          <field name="publisher_id" /> 
-          <field name="date_published" /> 
-          <field name="isbn" /> 
-          <field name="active" /> 
-          <field name="image" widget="image" /> 
-        </group>
-      </form> 
-    </field> 
-  </record>
-    
-</odoo>
-```
 En el archivo: **__manifest__.py** del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
 
 ```
