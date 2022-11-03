@@ -99,9 +99,9 @@ self.env = self.env(user=user_admin)
 
 **Creando un data model**
 
-En el archivo [**__init__.py**](../../../firtsApp/windows/docs/ch03/library_app/__init__.py) del **root** se deberá agregar: **from . import models**
+En el archivo [**&#95;&#95;init&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__init__.py) del **root** se deberá agregar: **from . import models**
 
-Se deberá crear el archivo [**models/__init__.py**](../../../firtsApp/windows/docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
+Se deberá crear el archivo [**models/&#95;&#95;init&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
 
 Se crea el archivo [**models/library_book.py**](../../../firtsApp/windows/docs/ch03/library_app/models/library_book.py)
 
