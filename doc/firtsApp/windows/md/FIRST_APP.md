@@ -150,7 +150,7 @@ Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/c
 
 &#9655;**Usando Grupos para la organización de Formularios**, organizados en los elementos **&#60;group&#62;**
 
-En el archivo: [**__manifest__.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[ ]**
+En el archivo: [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[ ]**
 
 
 **Agregando Listas y Vistas de busqueda**
