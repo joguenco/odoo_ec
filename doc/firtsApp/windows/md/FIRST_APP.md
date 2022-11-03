@@ -144,17 +144,11 @@ Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/c
 
 &#9655;Las **vistas** son registros almacenados en el modelo **ir.ui.view**, con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml)
 
-**Vistas de formulario de documentos del Negocio**
+**Vistas de formulario de documentos del Negocio**, detalladas en el contenido de los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
 
-&#9655;En el archivo [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml), se detalla el contenido de los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
+**Agregar Boton de Acción**, detalladas en el contenido del elemento **&#60;header&#62;** 
 
-**Agregar Boton de Acción**
-
-&#9655;En el archivo [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **&#60;header&#62;** 
-
-**Usando Grupos para la organización de Formularios**
-
-&#9655;En el archivo [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml), se organizan los elementos **&#60;group&#62;**
+**Usando Grupos para la organización de Formularios**, organizadas en los elementos **&#60;group&#62;**
 
 En el archivo: [**__manifest__.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
 
