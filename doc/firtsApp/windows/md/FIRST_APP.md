@@ -142,7 +142,7 @@ Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/c
 
 **Creación de una vista de formulario**
 
-&#9655;Las **vistas** son registros almacenados en el modelo **ir.ui.view**, con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml)
+&#9655;Las vistas son registros almacenados en el modelo **ir.ui.view**, con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml)
 
 &#9655;**Vistas de formulario de documentos del Negocio**, descritas en los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
 
