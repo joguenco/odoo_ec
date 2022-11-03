@@ -59,23 +59,23 @@ python odoo-bin -d odoo15 -r Juan -w mi_password --without-demo=all --stop-after
 ```
 En el directorio **/views** se crea el archivo: [**library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml), el elemento **menuitem**, creará un registro en el modelo: **ir.ui.menu**:
 
-En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agregar el siguiente código: [**"data": ["views/library_menu.xml",],**](../docs/ch03/library_app/__manifest__.py)
+En el archivo: **__manifest__.py**, en la sección **data : [ ]** se deberá agregar el siguiente código: [**"data": ["views/library_menu.xml",],**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py)
 <br> <br>
 **Agregar Grupos de Seguridad**
 
-&#9655; En el archivo **__manifest__.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../docs/ch03/library_app/__manifest__.py)
+&#9655; En el archivo **__manifest__.py** se deberá agregar en la sección **categoría** :  [**"category": "Services/library"**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py)
 
-&#9655; Se deberá crear el archivo: [**/security/library_security.xml**](../docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
+&#9655; Se deberá crear el archivo: [**/security/library_security.xml**](../../../firtsApp/windows/docs/ch03/library_app/security/library_security.xml), con los xml's (**name**, **category_id** y **implied_ids**)
 
-&#9655; El archivo [**__manifest.py__**](../docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
+&#9655; El archivo [**__manifest.py__**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py), debería tener las siguientes instrucciones: **"data":** **["security/library_security.xml", "views/library_menu.xml",],**
 
 La instrucción **"security/library_security.xml",** siempre deberá estar antes de **"views/library_menu.xml",** 
 
 ## 6. Agregar Test Automatizados
 
-&#9655; Se debe agregar en el directorio **/tests** el archivo [**tests/__init__.py**](../docs/ch03/library_app/tests/__init__.py), con el siguiente código: **from . import test_book**
+&#9655; Se debe agregar en el directorio **/tests** el archivo [**tests/__init__.py**](../../../firtsApp/windows/docs/ch03/library_app/tests/__init__.py), con el siguiente código: **from . import test_book**
 
-&#9655; En el directorio **/tests**, se debe agregar el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py). Las funciones **test** deberán iniciar con la siguiente expresión: **test_**
+&#9655; En el directorio **/tests**, se debe agregar el archivo [**tests/test_book.py**](../../../firtsApp/windows/docs/ch03/library_app/tests/test_book.py). Las funciones **test** deberán iniciar con la siguiente expresión: **test_**
 
 **Arrancando los tests**
 ```
@@ -83,7 +83,7 @@ python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Probando (Testing) la lógica del negocio**
 
-En el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py), agregaremos las siguientes líneas de código, después de **test_book_create()**
+En el archivo [**tests/test_book.py**](../../../firtsApp/windows/docs/ch03/library_app/tests/test_book.py), agregaremos las siguientes líneas de código, después de **test_book_create()**
 <br>
 ~~~
 def test_check_isbn(self):
@@ -92,7 +92,7 @@ def test_check_isbn(self):
 ~~~
 **Probando (Testing) la seguridad de acceso**
 
-En el archivo [**tests/test_book.py**](../docs/ch03/library_app/tests/test_book.py), se debe agregar dos líneas en la función **def setUp(self,*args,**kwargs)**, la primera busca el registro del usuario **admin** usando XML ID, la segunda línea modifica el ambiente utilizado para arrancar el test **self.env**,cambiando del **usuario activo** al **usuario administrador** 
+En el archivo [**tests/test_book.py**](../../../firtsApp/windows/docs/ch03/library_app/tests/test_book.py), se debe agregar dos líneas en la función **def setUp(self,*args,**kwargs)**, la primera busca el registro del usuario **admin** usando XML ID, la segunda línea modifica el ambiente utilizado para arrancar el test **self.env**,cambiando del **usuario activo** al **usuario administrador** 
 ~~~
 user_admin = self.env.ref("base.user_admin")
 self.env = self.env(user=user_admin)
@@ -102,11 +102,11 @@ self.env = self.env(user=user_admin)
 
 **Creando un data model**
 
-En el archivo [**__init__.py**](../docs/ch03/library_app/__init__.py) del **root** se deberá agregar: **from . import models**
+En el archivo [**__init__.py**](../../../firtsApp/windows/docs/ch03/library_app/__init__.py) del **root** se deberá agregar: **from . import models**
 
-Se deberá crear el archivo [**models/__init__.py**](../docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
+Se deberá crear el archivo [**models/__init__.py**](../../../firtsApp/windows/docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
 
-Se crea el archivo [**models/library_book.py**](../docs/ch03/library_app/models/library_book.py)
+Se crea el archivo [**models/library_book.py**](../../../firtsApp/windows/docs/ch03/library_app/models/library_book.py)
 
 Ahora para ejecutar los cambios, se debe efectuar la **actualización** del módulo **library_module**, con el siguiente comando:   
 ```
@@ -117,7 +117,7 @@ python odoo-bin -c odoo.conf -u library_module
 **Seguridad en el Control de Acceso**
 
 Para acceder a las reglas de acceso del modelo, podemos navegar en la aplicación web en el apartado: **Settings|Technical|Security|Access Rights**. Se podría otorgar acceso completo al **Administrador de la Librería**, y a los **usuarios** permisos para **leer**, **escribir** y **crear** libros.
-Estos permisos de acceso pueden ser proporcionados por el archivo: [**security/ir.model.access.csv**](../docs/ch03/library_app/security/ir.model.access.csv).
+Estos permisos de acceso pueden ser proporcionados por el archivo: [**security/ir.model.access.csv**](../../../firtsApp/windows/docs/ch03/library_app/security/ir.model.access.csv).
 En el archivo **__manifest__.py**, se debería agregar la siguiente línea de código: **security/ir.model.access.csv**.
 ```
     "data": [
@@ -132,7 +132,7 @@ python odoo-bin -c odoo.conf -u library_module --test-enable
 ```
 **Reglas de acceso a nivel de fila**
 
-En el archivo: [**security/library-security.xml**](../docs/ch03/library_app/security/library_security.xml), sección **&#60;data&#62;** antes del tag **&#60;&#92;odoo&#62;**, se deben agregar algunas líneas de código
+En el archivo: [**security/library-security.xml**](../../../firtsApp/windows/docs/ch03/library_app/security/library_security.xml), sección **&#60;data&#62;** antes del tag **&#60;&#92;odoo&#62;**, se deben agregar algunas líneas de código
 
 La regla de registro residente en el elemento **&#60;data noupdate="1"&#62;**, determina que estos registros se **crearán en la instalación del módulo**, pero **no se reescribirán en las actualizaciones** del módulo.
 
@@ -141,7 +141,7 @@ La regla de registro residente en el elemento **&#60;data noupdate="1"&#62;**, d
 
 **Agregar elementos de menú**
 
-Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml), este archivo de datos describe dos registros de la siguiente manera:
+Se crea el archivo [**views/library_menu.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/library_menu.xml), este archivo de datos describe dos registros de la siguiente manera:
 <br><br>
 &#9655;El elemento **&#60;record&#62;**  define una acción de ventana del lado del cliente, para abrir el Modelo Library.Book con las vistas de árbol y formulario habilitadas, en ese orden.
 <br>
@@ -149,21 +149,21 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 **Creación de una vista de formulario**
 
-&#9655;Las **vistas** son registros de datos almacenados en la base de datos del modelo **ir.ui.view**, las cuales se almacenan con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml)
+&#9655;Las **vistas** son registros de datos almacenados en la base de datos del modelo **ir.ui.view**, las cuales se almacenan con el elemento **&#60;record&#62;**, descrito en la vista [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml)
 
 **Vistas de formulario de documentos del Negocio**
 
-&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido de los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
+&#9655;En el archivo [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml), se detalla el contenido de los elementos **&#60;header&#62;** y **&#60;sheet&#62;**
 
 **Agregar Boton de Acción**
 
-&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **&#60;header&#62;** 
+&#9655;En el archivo [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **&#60;header&#62;** 
 
 **Usando Grupos para la organización de Formularios**
 
-&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se organizan los elementos **&#60;group&#62;**
+&#9655;En el archivo [**views/book_view.xml**](../../../firtsApp/windows/docs/ch03/library_app/views/book_view.xml), se organizan los elementos **&#60;group&#62;**
 
-En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
+En el archivo: [**__manifest__.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
 
 
 **Agregando Listas y Vistas de busqueda**
