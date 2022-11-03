@@ -159,9 +159,8 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 &#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **<header>** 
 <br>
-<br>
 En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
-
+<br>
 
 **Usando Grupos para la organización de Formularios**
 
