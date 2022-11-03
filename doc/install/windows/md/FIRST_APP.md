@@ -142,25 +142,6 @@ La regla de registro residente en el elemento **&#60;data noupdate="1"&#62;**, d
 **Agregar elementos de menú**
 
 Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/library_menu.xml) 
-```
-<odoo>
-
-  <!-- Action to open the Book list -->
-  <record id="action_library_book" model="ir.actions.act_window">
-    <field name="name">Library Books</field>
-    <field name="res_model">library.book</field>
-    <field name="view_mode">tree,form</field>
-  </record>
-  
-  <!-- Menu item to open the Book list -->
-  <menuitem id="menu_library_book"
-    name="Books"
-    parent="menu_library"
-    action="action_library_book"
-  />
-
-</odoo>
-```
 
 Este archivo de datos describe dos registros de la siguiente manera:
 
