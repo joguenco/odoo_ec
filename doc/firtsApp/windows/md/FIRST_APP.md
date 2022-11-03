@@ -5,7 +5,7 @@ El comando de arranque de Odoo puede ser ejecutado de la siguiente manera:
 ```
 python odoo-bin -c ./odoo.conf --save --stop 
 ``` 
-Donde el archivo **./odoo.conf**, contiene las configuraciones de arranque del servidor, todos los parámetros podrian ser editados: <br>
+Donde el archivo **./odoo.conf**, contiene las configuraciones de arranque del servidor, todos los parámetros podrían ser editados: <br>
 
  **dbname**= odoo15 <br>
  **dbpassword**= mi_password <br>
