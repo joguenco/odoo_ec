@@ -203,7 +203,6 @@ Se crea el archivo: [**(views/book_list_template.xml)**](../../../firtsApp/windo
 
 &#9655;La plantilla **&#60;QWeb&#62;** [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml), debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) en el apartado **data[ ]**, como un archivo XML
 
-<br>
 Una vez realizada la actualización del módulo, la página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deberían de listar los libros disponibles  
 
 ## Seguridad de Acceso
