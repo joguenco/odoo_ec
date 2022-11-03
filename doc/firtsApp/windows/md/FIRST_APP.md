@@ -195,13 +195,13 @@ La anotación **@http.route**, declara que el extremo de la URL está enlazado: 
 
 Se crea el archivo: [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml) 
 
-El elemento **template**  declara la existencia de una plantilla **QWeb**
+&#9655;El elemento **template**  declara la existencia de una plantilla **QWeb**
 
-El atributo **t-foreach** se utiliza para recorrer los elementos de la variable **books**, disponibles para la plantilla **QWeb**  
+&#9655;El atributo **t-foreach** se utiliza para recorrer los elementos de la variable **books**, disponibles para la plantilla **QWeb**  
 
-El atributo **t-field** se encarga de representar correctamente el contenido de un campo de registro de la plantilla.
+&#9655;El atributo **t-field** se encarga de representar correctamente el contenido de un campo de registro de la plantilla.
 
-La plantilla **QWeb** [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml), debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) en el apartado **data[ ]**, como un archivo XML
+&#9655;La plantilla **QWeb** [**(views/book_list_template.xml)**](../../../firtsApp/windows/docs/ch03/library_app/views/book_list_template.xml), debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) en el apartado **data[ ]**, como un archivo XML
 
 <br>
 Una vez realizada la actualización del módulo, la página web, debería de trabajar en la url **http://localhost:8069/library/books**, donde sin la necesidad de loguearse, se deberían de listar los libros disponibles  
