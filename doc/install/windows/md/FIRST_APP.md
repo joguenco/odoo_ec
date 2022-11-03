@@ -157,34 +157,19 @@ Se crea el archivo [**views/library_menu.xml**](../docs/ch03/library_app/views/l
 
 **Agregar Boton de Acción**
 
-&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **<header>** 
+&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se detalla el contenido del elemento **&#60;header&#62;** 
+
+**Usando Grupos para la organización de Formularios**
+
+&#9655;En el archivo [**views/book_view.xml**](../docs/ch03/library_app/views/book_view.xml), se organizan los elementos **&#60;group&#62;**
+
 <br>
 En el archivo: [**__manifest__.py**](../docs/ch03/library_app/__manifest__.py) del root,  se deberá, agregar la línea de código: **views/book_view.xml**, en el elemento **"data" :[]**
 <br>
 
-**Usando Grupos para la organización de Formularios**
-
-En el archivo **views/book_view.xml**,citado anteriormente, se organizan los elementos **<group>**
-```
-<sheet>
-  <group name="group_top">
-    <group name="group_left">
-      <field name="name" /> 
-      <field name="author_ids" widget="many2many_tags" /> 
-      <field name="publisher_id" /> 
-      <field name="date_published" /> 
-    </group>
-    <group name="group_right">
-      <field name="isbn" /> 
-      <field name="active" /> 
-      <field name="image" widget="image" /> 
-    </group>
-  </group>
-</sheet>
-```
 **Agregando Listas y Vistas de busqueda**
 
-El elemento **<tree>** deberá contener los campos que se presentarán como columnas, nuevamente se edita el archivo **views/book_view.xml**, agregando el siguiente código antes del elemento **</odoo>**
+El elemento **&#60;tree&#62;** deberá contener los campos que se presentarán como columnas, nuevamente se edita el archivo **views/book_view.xml**, agregando el siguiente código antes del elemento **&#60;&#47;odoo&#62;**
 ```
   <record id="view_tree_book" model="ir.ui.view">
     <field name="name">Book List</field>
