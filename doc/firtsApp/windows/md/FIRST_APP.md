@@ -193,7 +193,7 @@ La anotación **@http.route**, declara que el extremo de la URL está enlazado: 
 
 **Agregando un QWeb Template**
 
-El archivo de datos de plantilla **QWeb** debe declararse en el **__manifest__.py** del módulo, como cualquier otro archivo de datos XML, para que se cargue y pueda estar disponible.
+La plantilla **QWeb** debe declararse en el archivo [**&#95;&#95;manifest&#95;&#95;.py**](../../../firtsApp/windows/docs/ch03/library_app/__manifest__.py) del módulo, como un archivo XML, para que se cargue y este disponible.
 
 En el archivo **/__manifest__.py**, se deberá agregar la línea de código: **views/book_list_template.xml**, en el apartado **data[]**, quedando de la siguiente manera:
 
