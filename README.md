@@ -8,4 +8,4 @@ In development documentation and implementation
 #### [Ubuntu](./doc/install/ubuntu/README.md)
 #### [Windows](./doc/install/windows/README_.md)
 #### [Mi primera aplicación con Odoo 15.0](doc/03firtsApp/windows/md/FIRST_APP.md)
-#### [Extendiendo módulos](doc/04firtsApp/windows/md/EXT_MODULES.md)
+#### [Extendiendo módulos](./doc/04extendingModules/windows/md/EXT_MODULES.md)
