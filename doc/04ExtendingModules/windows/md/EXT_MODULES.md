@@ -15,7 +15,8 @@ Para agregar los campos del nuevo modelo a las tablas de la base de datos, se de
 
 **Agregando un campo al Form View**
 
-Lo primero que se debe hacer es encontrar el ID XML para extender la vista, buscando en el apartado 
+Lo primero que se debe hacer es encontrar el ID XML para el formulario del libro **library_app.view_form_book**, buscamos en las **vistas** de la aplicación web,  apartado **Technical|Database Structure|Models**. 
+Para extender las **Vistas**, se debe agregar el archivo [**views/book_view.xml**](../../windows/docs/library_member/views/book_view.xml)
 
    
 ## 3. Ampliación de modelos utilizando la extensión
