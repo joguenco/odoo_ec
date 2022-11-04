@@ -12,7 +12,7 @@ A continuación se debe agregar el archivo [**/library_member/models/&#95;&#95;i
 Y finalmente crear el archivo [**/library_member/models/library_book.py**](../../windows/docs/library_member/models/library_book.py), encargado de extender el modelo: **library_book**
 
 
-Para agregar los campos del nuevo modelo a las tablas de la base de datos, se debe instalar el módulo adicional, los campos recien agregados deberían de estar visibles en la aplicación web en el apartado de **Technical|Database Structure|Models**   
+Para agregar los campos del nuevo modelo a las tablas de la base de datos, se debe instalar el módulo adicional, los campos recien agregados deberían ser visibles en la aplicación web en el apartado **Technical|Database Structure|Models**   
 ## 3. Ampliación de modelos utilizando la extensión
 ## 4. Modelos enbebidos usando herencia de delegación
 ## 5. Extendiendo Vistas y datos
