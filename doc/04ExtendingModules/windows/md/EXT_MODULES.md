@@ -7,6 +7,8 @@ Para extender un modelo existente, se debera usar una **Python Class** con el at
 Es recomendable tener un archivo **Python** por cada modelo, así que se debe crear el archivo [**/library_member/models/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/library_member/models/__init__.py), encargado de ampliar el modelo original    
 
 Para iniciar se debe crear el archivo [**/library_member/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/library_member/__init__.py) con el siguiente codigo: **from . import models**
+A continuación se debe agregar el archivo [**/library_member/models/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/library_member/models/__init__.py) con el siguiente codigo: **from . import library_book**
+y se debe crear el archivo [**/library_member/models/library_book.py**](../../windows/docs/library_member/models/library_book.py), encargado de extender el modelo: **library_book**
 
 ## 3. Ampliación de modelos utilizando la extensión
 ## 4. Modelos enbebidos usando herencia de delegación
