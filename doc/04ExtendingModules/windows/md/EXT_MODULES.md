@@ -1,4 +1,4 @@
-## Extendiendo Módulos
+## Extendiendo módulos
 
 ## 1. Ampliación de la aplicación Biblioteca
 Para iniciar se debe crear el directorio [**/library_member**](../../windows/docs/library_member)
