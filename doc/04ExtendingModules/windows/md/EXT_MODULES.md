@@ -1,7 +1,7 @@
 ## Extendiendo módulos
 
 ## 1. Ampliación de la aplicación Biblioteca
-Para iniciar se debe crear el directorio [**/library_member**](../../windows/docs/library_member)
+Para iniciar se debe crear el directorio [**/library_member**](../../windows/docs/library_member), al mismo orden jerárquico que el directorio [**/library_app**](../../windows/docs/library_app) 
 ## 2. Agregar nuevos campos con la extensión del modelo 
 ## 3. Ampliación de modelos utilizando la extensión
 ## 4. Modelos enbebidos usando herencia de delegación
