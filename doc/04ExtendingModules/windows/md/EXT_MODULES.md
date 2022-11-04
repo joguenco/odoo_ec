@@ -1,7 +1,7 @@
 ## Extendiendo módulos
 
 ## 1. Ampliación de la aplicación Biblioteca
-Para iniciar se debe crear el directorio [**/library_member**](../../windows/docs/library_member), dentro del mismo se debe crear un archivo [**/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/library_member/__init__.py) que inicialmente deberá estar vacio y un archivo [**/&#95;&#95;manifest&#95;&#95;.py**](../../windows/docs/library_member/__manifest__.py). El directorio [**/library_member**](../../windows/docs/library_member), debe estar al mismo orden jerárquico (junto) al directorio [**/library_app**](../../windows/docs/library_app) 
+Para iniciar se debe crear el directorio [**/library_member**](../../windows/docs/library_member), dentro del mismo se debe crear un archivo [**/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/library_member/__init__.py) y un archivo [**/&#95;&#95;manifest&#95;&#95;.py**](../../windows/docs/library_member/__manifest__.py). El directorio [**/library_member**](../../windows/docs/library_member), debe estar al mismo orden jerárquico (junto) al directorio [**/library_app**](../../windows/docs/library_app) 
 ## 2. Agregar nuevos campos con la extensión del modelo
 Para extender un modelo existente, se debera usar una **Python Class** con el atributo **_inherit** que identifica el modelo que se va a ampliar, es recomendable tener un archivo **Python** por cada modelo    
 
