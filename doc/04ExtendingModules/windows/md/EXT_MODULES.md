@@ -5,6 +5,9 @@ Para iniciar se debe crear el directorio [**/library_member**](../../windows/doc
 ## 2. Agregar nuevos campos con la extensión del modelo
 Para extender un modelo existente, se debera usar una **Python Class** con el atributo **_inherit** que identifica el modelo que se va a ampliar.
 Es recomendable tener un archivo **Python** por cada modelo, así que se debe crear el archivo [**/library_member/models/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/library_member/models/__init__.py), encargado de ampliar el modelo original    
+
+Para iniciar se debe crear el archivo [**/library_member/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/library_member/__init__.py) con el siguiente codigo: **from . import models**
+
 ## 3. Ampliación de modelos utilizando la extensión
 ## 4. Modelos enbebidos usando herencia de delegación
 ## 5. Extendiendo Vistas y datos
