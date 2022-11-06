@@ -36,6 +36,10 @@ cd odoo
 ```
 virtualenv venv
 ```
+or
+```
+virtualenv -p python3.8 venv
+```
 * Activate python virtual environment
 ```
 source ./venv/bin/activate
