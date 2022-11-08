@@ -30,21 +30,21 @@ El path de la ubicación de los **addons**, se encuentra generalmente en la sigu
 
 **Comando para añadir un addons-path**   
 ```
-python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-adons" -c odoo.conf --save --stop
+python odoo-bin --addons-path="/home/odoo/projects/odoo/custom-addons" -c odoo.conf --save --stop
 ```
 Con la utilización de este comando, generalmente suelen borrarse los **addons path** del archivo **./odoo.conf**, por lo que es recomendable agregar la nueva ruta **addons**, editando el archivo **./odoo.conf**    
 
 **Comando para añadir un módulo con sus directorios (esqueleto de directorios), utilizando**  **scaffold**   
 ```
-python odoo-bin scaffold mi_modulo ./custom-addons
+python odoo-bin scaffold library_app ./custom-addons
 ```
 **Para la instalación del nuevo Módulo, se deberá utilizar el siguiente comando:**
 ```
-python odoo-bin -c odoo.conf -i mi_modulo
+python odoo-bin -c odoo.conf -i library_app
 ```
 Con la opción **-i**, se pueden instalar varios módulos separados por una **coma ,** para la **Actualización del Módulo**, se debería utilizar:
 ```
-python odoo-bin -c odoo.conf -u mi_modulo
+python odoo-bin -c odoo.conf -u library_app
 ```
 ## 5. Creando una nueva aplicación
 
