@@ -76,7 +76,7 @@ La instrucción **"security/library_security.xml",** siempre deberá estar antes
 
 **Arrancando los tests**
 ```
-python odoo-bin -c odoo.conf -u library_module --test-enable
+python odoo-bin -c odoo.conf -u library_app --test-enable
 ```
 **Probando (Testing) la lógica del negocio**
 
@@ -103,7 +103,7 @@ En el archivo [**&#95;&#95;init&#95;&#95;.py**](../../windows/docs/ch03/library_
 
 Se deberá crear el archivo [**models/&#95;&#95;init&#95;&#95;.py**](../../windows/docs/ch03/library_app/models/__init__.py), y agregar la siguiente línea de código: **from . import library_book**
 
-Se crea el archivo [**models/library_book.py**](../../windows/docs/ch03/library_app/models/library_book.py), y se debe efectuar **actualizar** el módulo **library_module**   
+Se crea el archivo [**models/library_book.py**](../../windows/docs/ch03/library_app/models/library_book.py), y se debe efectuar **actualizar** el módulo **library_app**   
 ```
 python odoo-bin -c odoo.conf -u library_module
 ```
