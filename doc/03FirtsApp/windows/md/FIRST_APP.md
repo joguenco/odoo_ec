@@ -105,7 +105,7 @@ Se deberá crear el archivo [**models/&#95;&#95;init&#95;&#95;.py**](../../windo
 
 Se crea el archivo [**models/library_book.py**](../../windows/docs/ch03/library_app/models/library_book.py), y se debe efectuar **actualizar** el módulo **library_app**   
 ```
-python odoo-bin -c odoo.conf -u library_module
+python odoo-bin -c odoo.conf -u library_app
 ```
 ## 8. Configurando la seguridad de acceso
 
