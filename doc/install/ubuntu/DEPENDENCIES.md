@@ -44,9 +44,11 @@ virtualenv -p python3.8 venv
 ```
 source ./venv/bin/activate
 ```
-* Update pip
+* Update pip and tools
 ```
 pip install -U pip
+pip install --upgrade wheel
+pip install --upgrade setuptools
 ```
 * Install requirements
 ```
