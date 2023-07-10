@@ -1,9 +1,9 @@
 # Documentation for Ubuntu
 ## Requirements
-* Ubuntu 20.04
+* Ubuntu 22.04
 * PostgreSQL
 * Git
-* Python 3.8
+* Python 3.9
 
 ## Installation
 ### Configure UTC
