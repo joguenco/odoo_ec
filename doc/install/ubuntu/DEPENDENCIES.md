@@ -20,10 +20,10 @@ sudo npm install -g less less-plugin-clean-css
 
 Go to wkhtmltopdf.org and download your compatible version
 ```
-wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 ```
 ```
-sudo apt install ./wkhtmltox_0.12.6-1.focal_amd64.deb 
+sudo apt install ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 ```
 * Get odoo source code
 ```
@@ -38,7 +38,7 @@ virtualenv venv
 ```
 or
 ```
-virtualenv -p python3.8 venv
+virtualenv -p python3.9 venv
 ```
 * Activate python virtual environment
 ```
