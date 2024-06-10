@@ -27,7 +27,7 @@ sudo apt install ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 ```
 * Get odoo source code
 ```
-git clone https://github.com/odoo/odoo.git -b 15.0 --depth=1
+git clone https://github.com/odoo/odoo.git -b 17.0 --depth=1
 ```
 * Create python virtual environment
 ```
@@ -38,7 +38,7 @@ virtualenv venv
 ```
 or
 ```
-virtualenv -p python3.9 venv
+virtualenv -p python3.11 venv
 ```
 * Activate python virtual environment
 ```
