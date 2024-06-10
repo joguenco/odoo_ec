@@ -3,7 +3,7 @@
 * Ubuntu 22.04
 * PostgreSQL
 * Git
-* Python 3.9
+* Python 3.11
 
 ## Installation
 ### Configure UTC
@@ -25,11 +25,11 @@ Use this command only in first time for create the database, the parameters are:
     -r: username
     -w: password
 ```
-odoo -d odoo15 -r odoo15 -w o --stop-after-init
+odoo -d odoo17 -r odoo17 -w o --stop-after-init
 ```
 or without demonstration data
 ```
-odoo -d odoo15 -r odoo15 -w o --without-demo=all --stop-after-init
+odoo -d odoo17 -r odoo17 -w o --without-demo=all --stop-after-init
 ```
 ### Configuring the Odoo server options
 * To see all the available options
@@ -41,9 +41,9 @@ odoo --help
 odoo -c odoo.conf --save --stop
 ```
 * Edit **odoo.conf**
-  * db_name = odoo15
+  * db_name = odoo17
   * db_password = o
-  * db_user = odoo15
+  * db_user = odoo17
 ### Run odoo server
 ```
 odoo -c odoo.conf
