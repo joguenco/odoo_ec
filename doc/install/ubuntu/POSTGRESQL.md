@@ -11,7 +11,7 @@ sudo su - postgres
 psql
 ```
 ```commandline
-CREATE ROLE odoo15 WITH LOGIN NOSUPERUSER CREATEDB NOCREATEROLE INHERIT NOREPLICATION CONNECTION LIMIT -1 PASSWORD 'o';
+CREATE ROLE odoo17 WITH LOGIN NOSUPERUSER CREATEDB NOCREATEROLE INHERIT NOREPLICATION CONNECTION LIMIT -1 PASSWORD 'o';
 ```
 * Show **pg_hba.conf** path
 ```commandline
@@ -26,13 +26,13 @@ local   all             postgres                                peer
 ```
 Add in the next line
 ```
-local   all             odoo15                                  trust
+local   all             odoo17                                  trust
 ```
 Restart postgresql service
 ```
 sudo systemctl restart postgresql
 ```
-* Test mew odoo15 user
+* Test mew odoo17 user
 ```commandline
 psql -d postgres -U odoo15 -W
 ```
@@ -41,5 +41,5 @@ psql -d postgres -U odoo15 -W
 * Enable or add: listen_addresses = 'ip server'
 * In **pg_hba.conf** add the next line:
 ```
-host    all             odoo15          remote.host.ip/24.mask.number         trust
+host    all             odoo17          remote.host.ip/24.mask.number         trust
 ```
