@@ -42,7 +42,7 @@ virtualenv -p python3.11 venv
 ```
 * Activate python virtual environment
 ```
-source ./venv/bin/activate
+source venv/bin/activate
 ```
 * Update pip and tools
 ```
