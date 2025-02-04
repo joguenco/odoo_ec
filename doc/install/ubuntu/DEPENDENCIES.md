@@ -7,7 +7,7 @@ sudo apt install git
 sudo apt install python3-dev python3-pip python3-wheel python3-venv python3-virtualenv
 ```
 ```
-sudo apt install build-essential libpq-dev libxslt-dev libzip-dev libldap2-dev libsasl2-dev libssl-dev
+sudo apt install build-essential libpq-dev libxslt-dev libzip-dev libldap2-dev libsasl2-dev libssl-dev libcairo2-dev
 ```
 * CSS processor
 ```
