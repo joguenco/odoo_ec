@@ -28,6 +28,10 @@ Add in the next line
 ```
 local   all             odoo17                                  trust
 ```
+Modify this line
+```
+host    all             all             127.0.0.1/32            scram-sha-256
+```
 Restart postgresql service
 ```
 sudo systemctl restart postgresql
